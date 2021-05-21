@@ -13,6 +13,10 @@ Style/IfUnlessModifier:
   Exclude:
     - 'bin/*'
 
+Lint/MissingSuper:
+  Exclude:
+    - 'lib/lalamove/services/**/*'
+
 Style/StringLiterals:
   Enabled: true
 
