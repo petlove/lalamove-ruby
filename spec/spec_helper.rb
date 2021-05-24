@@ -3,10 +3,11 @@
 require 'bundler/setup'
 require 'simplecov'
 require 'support/configs/simple_cov_config'
+
 SimpleCovConfig.configure
 
-require 'dotenv'
 require 'lalamove/ruby'
+require 'dotenv'
 require 'pry'
 
 Dir[File.expand_path(File.join(File.dirname(__FILE__), 'support', '**', '*.rb'))].sort.each do |f|

@@ -5,6 +5,7 @@ module Lalamove
     class RequestService < ActiveService::Base
       LALAMOVE_HOST  = ENV['LALAMOVE_HOST']
       LALAMOVE_TOKEN = ENV['LALAMOVE_TOKEN']
+      LALAMOVE_API_SECRET = ENV['LALAMOVE_API_SECRET']
 
       def initialize(params = {})
         @params  = params
