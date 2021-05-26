@@ -2,6 +2,9 @@
 
 This is an unofficial Ruby client for the [Lalamove](https://developers.lalamove.com/) API.
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/a67df9f7c59596d08870/maintainability)](https://codeclimate.com/github/petlove/lalamove-ruby/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a67df9f7c59596d08870/test_coverage)](https://codeclimate.com/github/petlove/lalamove-ruby/test_coverage)
+
 ## Installation
 
 Add this line to your application's Gemfile:
