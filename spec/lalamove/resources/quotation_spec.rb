@@ -12,6 +12,7 @@ RSpec.describe Lalamove::Resources::Quotation do
       it 'returns a valid response' do
         expect(Lalamove::Services::QuotationService).to receive(:perform!).once.and_call_original
 
+        # TODO: Needs tokens in order to makes real connections
         # is_expected.to be_valid
         is_expected.not_to be_valid
       end

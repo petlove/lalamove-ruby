@@ -8,8 +8,17 @@ RSpec.describe Lalamove::Services::RequestService do
   let(:payload)  { { foo: 'bar' } }
   let(:request)  { double(:request) }
   let(:path)     { '' }
-  let(:response) { double(body: '{}', status: 201, valid?: true, errors: {}) }
-  let(:headers)  { { 'Content-Type': 'application/json', Accept: 'application/json', Authorization: anything } }
+  let(:response) { double(body: '{}', status: 201, success?: true, errors: {}) }
+
+  let(:headers) do
+    {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+      Authorization: anything,
+      'X-LLM-Country': anything,
+      'X-Request-ID': anything
+    }
+  end
 
   subject { described_class.perform(action: 'post', path: path, payload: payload) }
 
@@ -45,7 +54,7 @@ RSpec.describe Lalamove::Services::RequestService do
 
     context 'when status code different from 201' do
       let(:body)    { '{"foo": "bar"}' }
-      let(:result)  { double(body: body, status: 422) }
+      let(:result)  { double(body: body, status: 422, success?: false, reason_phrase: { foo: 'bar' }) }
       let(:request) { double(post: result) }
 
       before do
