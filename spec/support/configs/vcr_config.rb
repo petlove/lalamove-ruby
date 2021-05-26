@@ -10,7 +10,6 @@ module VcrConfig
     end
 
     def all_files?(config)
-      # (Dir[Rails.root.join('spec/**/*_spec.rb')] - config.files_to_run).empty?
       (Dir['spec/**/*_spec.rb'] - config.files_to_run).empty?
     end
 
