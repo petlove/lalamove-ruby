@@ -1,8 +1,9 @@
-# lalamove-ruby
+# Lalamove-ruby
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/lalamove/ruby`. To experiment with that code, run `bin/console` for an interactive prompt.
+This is an unofficial Ruby client for the [Lalamove](https://developers.lalamove.com/) API.
 
-TODO: Delete this and the text above, and describe your gem
+[![Maintainability](https://api.codeclimate.com/v1/badges/a67df9f7c59596d08870/maintainability)](https://codeclimate.com/github/petlove/lalamove-ruby/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a67df9f7c59596d08870/test_coverage)](https://codeclimate.com/github/petlove/lalamove-ruby/test_coverage)
 
 ## Installation
 
@@ -22,7 +23,35 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Configuration
+
+You can generate an initializer using this single command
+
+```ruby
+    $ rails generate initializer lalamove
+```
+It will generate an simple Lalamove cliente configuraion. Howevere if you prefer, you can create manually, like this:
+
+```ruby
+    # config/initializer/lalamove.rb
+
+    Lalamove.configure do |config|
+      config.production = false # Your environment
+      config.token = 'Your own Lalamove token'
+      config.secret = 'Your own Lalamove secret key'
+    end
+```
+
+[Country codes](https://developers.lalamove.com/?plaintext--sandbox#available-countries)
+
+
+### Usage
+
+##### Quotation
+
+```ruby
+Lalamove::Client.quotation.perform(payload)
+```
 
 ## Development
 

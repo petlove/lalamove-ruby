@@ -10,8 +10,10 @@ module Lalamove
 
       def perform
         result = connection.send(params[:action], params[:path], payload)
-        data   = JSON.parse(result.body, symbolize_names: true)
-        response(result.status.to_s.start_with?('20') ? { data: data } : { errors: data })
+
+        return response(errors: result.reason_phrase, status: result.status) unless result.success?
+
+        response(data: JSON.parse(result.body, symbolize_names: true), status: result.status)
       end
 
       private
@@ -38,18 +40,20 @@ module Lalamove
       end
 
       def authorization
-        OpenSSL::HMAC.hexdigest(
-          OpenSSL::Digest.new('sha256'),
-          Lalamove.configuration.secret,
-          signature
-        )
+        OpenSSL::HMAC.hexdigest('sha256', Lalamove.configuration.secret, signature)
+      end
+
+      def token
+        "#{Lalamove.configuration.token}:#{timestamp}:#{authorization}"
       end
 
       def headers
         {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
-          'Authorization': authorization
+          'Authorization': "hmac #{token}",
+          'X-LLM-Country': 'pt_BR',
+          'X-Request-ID': timestamp.to_s
         }
       end
     end

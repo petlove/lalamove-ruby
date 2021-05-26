@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox-rest.lalamove.com/v2/quotations
+    body:
+      encoding: UTF-8
+      string: '{"serviceType":"MOTORCYCLE","stops":[],"deliveries":[{"toStop":1,"toContact":{"name":"John
+        Iceberg","phone":"49999132508"},"remarks":"ORDER 987654321"}],"requesterContact":{"name":"John
+        Iceberg","phone":"49999132508"},"scheduleAt":"2021-05-26 16:44:33 UTC","specialRequests":[]}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - hmac :1622047473:dfdaee412c6ae07bed76dedbcf97e576ef86717f9f946bcbf78d0a0046674681
+      X-Llm-Country:
+      - pt_BR
+      X-Request-Id:
+      - '1622047473'
+      User-Agent:
+      - Faraday v1.4.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - nginx/1.15.8
+      Date:
+      - Wed, 26 May 2021 16:44:34 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Llm-Session-Id:
+      - '1622047473'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Wed, 26 May 2021 16:44:34 GMT
+recorded_with: VCR 6.0.0

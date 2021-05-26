@@ -27,6 +27,7 @@ RSpec.configure do |config|
   config.disable_monkey_patching!
 
   config.include FixturesHelper
+  VcrConfig.configure(config)
 
   config.expect_with :rspec do |c|
     c.syntax = :expect
