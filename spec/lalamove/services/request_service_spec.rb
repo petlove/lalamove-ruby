@@ -3,12 +3,13 @@
 require 'spec_helper'
 
 RSpec.describe Lalamove::Services::RequestService do
-  let(:url)      { ENV.fetch('LALAMOVE_HOST', '') }
-  let(:token)    { ENV.fetch('LALAMOVE_TOKEN', '') }
+  let(:url)      { 'https://sandbox-rest.lalamove.com' }
+  let(:token)    { '' }
   let(:payload)  { { foo: 'bar' } }
   let(:request)  { double(:request) }
   let(:path)     { '' }
   let(:response) { double(body: '{}', status: 201, valid?: true, errors: {}) }
+  let(:headers)  { { 'Content-Type': 'application/json', Accept: 'application/json', Authorization: anything } }
 
   subject { described_class.perform(action: 'post', path: path, payload: payload) }
 
@@ -18,12 +19,12 @@ RSpec.describe Lalamove::Services::RequestService do
 
       it 'returns correctly request body' do
         expect(Faraday).to receive(:new).once.with(
-          url: url + path,
-          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          url: url,
+          headers: headers,
           request: { open_timeout: 5, timeout: 10 }
         ).and_return(request)
 
-        expect(request).to receive(:send).once.with('post', payload.to_json).and_return(response)
+        expect(request).to receive(:send).once.with('post', path, payload.to_json).and_return(response)
 
         is_expected.to be_valid
       end
@@ -33,7 +34,7 @@ RSpec.describe Lalamove::Services::RequestService do
       it 'returns an error' do
         expect(Faraday).to receive(:new).once.with(
           url: url,
-          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          headers: headers,
           request: { open_timeout: 5, timeout: 10 }
         ).and_raise(StandardError)
 

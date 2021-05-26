@@ -3,16 +3,13 @@
 module Lalamove
   module Services
     class RequestService < ActiveService::Base
-      LALAMOVE_HOST  = ENV['LALAMOVE_HOST']
-      LALAMOVE_TOKEN = ENV['LALAMOVE_TOKEN']
-
       def initialize(params = {})
         @params  = params
-        @payload = params[:payload]
+        @payload = params[:payload].to_json
       end
 
       def perform
-        result = connection.send(params[:action], payload.to_json)
+        result = connection.send(params[:action], params[:path], payload)
         data   = JSON.parse(result.body, symbolize_names: true)
         response(result.status.to_s.start_with?('20') ? { data: data } : { errors: data })
       end
@@ -23,7 +20,7 @@ module Lalamove
 
       def connection
         @connection ||= Faraday.new(
-          url: "#{LALAMOVE_HOST}#{params[:path]}",
+          url: Lalamove.configuration.host,
           headers: headers,
           request: {
             open_timeout: 5,
@@ -32,10 +29,27 @@ module Lalamove
         )
       end
 
+      def timestamp
+        @timestamp ||= Time.now.utc.to_i
+      end
+
+      def signature
+        "#{timestamp}\r\n#{params[:action]}\r\n#{params[:path]}\r\n\r\n#{payload}"
+      end
+
+      def authorization
+        OpenSSL::HMAC.hexdigest(
+          OpenSSL::Digest.new('sha256'),
+          Lalamove.configuration.secret,
+          signature
+        )
+      end
+
       def headers
         {
           'Content-Type': 'application/json',
-          'Accept': 'application/json'
+          'Accept': 'application/json',
+          'Authorization': authorization
         }
       end
     end

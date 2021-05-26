@@ -1,0 +1,40 @@
+# frozen_string_literal: true
+
+# frozen_string_literal: true
+
+require 'lalamove/ruby/version'
+
+require 'lalamove/configuration'
+require 'lalamove/client'
+
+require 'active_service/base'
+require 'active_service/response'
+require 'faraday'
+
+require 'lalamove/entities/base'
+require 'lalamove/entities/address'
+require 'lalamove/entities/address_type'
+require 'lalamove/entities/customer'
+require 'lalamove/entities/delivery'
+require 'lalamove/entities/quotation_location'
+require 'lalamove/entities/quotation_stop'
+require 'lalamove/entities/quotation'
+
+require 'lalamove/resources/quotation'
+
+require 'lalamove/services/request_service'
+require 'lalamove/services/quotation_service'
+
+module Lalamove
+  def self.configuration
+    @configuration ||= Configuration.new
+  end
+
+  def self.configure
+    yield(configuration) if block_given?
+  end
+
+  def self.client(token)
+    Client.new(token)
+  end
+end
