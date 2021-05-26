@@ -16,6 +16,7 @@ Style/IfUnlessModifier:
 Lint/MissingSuper:
   Exclude:
     - 'lib/lalamove/services/**/*'
+    - 'lib/lalamove/resources/**/*'
 
 Style/StringLiterals:
   Enabled: true

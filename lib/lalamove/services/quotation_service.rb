@@ -4,26 +4,23 @@ module Lalamove
   module Services
     class QuotationService < ActiveService::Base
       def initialize(params = {})
-        @params  = params
+        @params = params
       end
 
       def perform
-        response
+        process
       end
 
       private
 
-      attr_reader :params,
+      attr_reader :params
+
+      def process
+        RequestService.perform!(action: :post, payload: payloadable.to_h, path: '/v2/quotations')
+      end
 
       def payloadable
-        {
-          # "serviceType": "MOTORCYCLE",
-          # "stops": [<Waypoint>],
-          # "deliveries": [<DeliveryInfo>],
-          # "requesterContact": <Contact>,
-          # "scheduleAt": "2020-09-01T14:30:00.00Z",
-          # "specialRequests": ["COD", "HELP_BUY", "LALABAG"]
-        }
+        @payloadable ||= Entities::Quotation.new(params)
       end
     end
   end

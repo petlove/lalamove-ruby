@@ -3,8 +3,8 @@
 module Lalamove
   module Entities
     class Address < Base
-      attribute :displayString, Types::String
-      attribute :country, Types::String
+      attribute :displayString, Types::Strict::String
+      attribute :country, Types::Strict::String
     end
   end
 end

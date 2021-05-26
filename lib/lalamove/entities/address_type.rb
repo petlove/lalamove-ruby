@@ -3,7 +3,7 @@
 module Lalamove
   module Entities
     class AddressType < Base
-      attribute :th_TH, Address
+      attribute :pt_BR, Address
     end
   end
 end

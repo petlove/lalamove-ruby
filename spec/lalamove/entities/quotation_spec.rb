@@ -14,7 +14,7 @@ RSpec.describe Lalamove::Entities::Quotation do
             lng: '100.535237'
           },
           addresses: [
-            th_TH: {
+            pt_BR: {
               displayString: 'Rua Dom Salomão Ferraz, 123',
               country: 'TH'
             }

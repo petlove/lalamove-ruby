@@ -5,7 +5,7 @@ require 'spec_helper'
 RSpec.describe Lalamove::Entities::AddressType do
   let(:attributes) do
     {
-      th_TH: {
+      pt_BR: {
         displayString: '444 ถนน พญาไท แขวง วังใหม่ เขต ปทุมวัน กรุงเทพมหานคร 10330 ประเทศไทย',
         country: 'TH'
       }
@@ -14,5 +14,5 @@ RSpec.describe Lalamove::Entities::AddressType do
 
   subject { described_class.new(attributes) }
 
-  it_behaves_like 'entity_attributes', %i[th_TH]
+  it_behaves_like 'entity_attributes', %i[pt_BR]
 end
