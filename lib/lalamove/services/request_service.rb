@@ -32,27 +32,23 @@ module Lalamove
       end
 
       def timestamp
-        @timestamp ||= Time.now.utc.to_i
+        @timestamp ||= (Time.now.utc.to_f * 1000).to_i
       end
 
       def signature
-        "#{timestamp}\r\n#{params[:action]}\r\n#{params[:path]}\r\n\r\n#{payload}"
-      end
-
-      def authorization
-        OpenSSL::HMAC.hexdigest('sha256', Lalamove.configuration.secret, signature)
-      end
-
-      def token
-        "#{Lalamove.configuration.token}:#{timestamp}:#{authorization}"
+        OpenSSL::HMAC.hexdigest(
+          'sha256',
+          Lalamove.configuration.secret,
+          "#{timestamp}\r\n#{params[:action].to_s.upcase}\r\n#{params[:path]}\r\n\r\n#{payload}"
+        )
       end
 
       def headers
         {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
-          'Authorization': "hmac #{token}",
-          'X-LLM-Country': 'pt_BR',
+          'Authorization': "hmac #{Lalamove.configuration.token}:#{timestamp}:#{signature}",
+          'X-LLM-Country': 'BR_SAO',
           'X-Request-ID': timestamp.to_s
         }
       end

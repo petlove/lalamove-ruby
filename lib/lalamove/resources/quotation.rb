@@ -20,44 +20,46 @@ module Lalamove
       end
 
       def deliveries
-        {
+        [
+          {
+            toStop: 1,
+            toContact: {
+              name: customer_name,
+              phone: "+55#{billing[:phone]}"
+            },
+            remarks: "ORDER #{params[:number]}"
+          }
+        ]
+      end
 
-          deliveries: [
-            {
-              toStop: 1,
-              toContact: {
-                name: customer_name,
-                phone: billing[:phone]
-              },
-              remarks: "ORDER #{params[:number]}"
-            }
-          ]
-        }
+      def long_address(address)
+        "#{address[:address1]}, #{address[:house_number]} - #{address[:neighborhood]}, "\
+        "#{address[:city]} - #{address[:state]}, #{address[:zipcode]}, Brazil"
       end
 
       def delivery_stops
-        [params[:shipping_address]].compact.map do |address|
+        [params[:shipping_address], params[:shipping_address]].compact.map do |address|
           {
-            location: {
-              lat: '13.740167',
-              lng: '100.535237'
-            },
-            addresses: [
+            # location: {
+            #   lat: '-23.519658',
+            #   lng: '-46.679692'
+            # },
+            addresses: {
               pt_BR: {
-                displayString: [address[:addres1], address[:house_number]].join(', '),
-                country: 'BR'
+                displayString: long_address(address),
+                country: 'BR_SAO'
               }
-            ]
+            }
           }
         end
       end
 
       def payload
         {
-          scheduleAt: Time.now.utc.to_s,
-          serviceType: 'MOTORCYCLE',
+          # scheduleAt: (Time.now + 2).utc.iso8601,
+          serviceType: 'LALAGO',
           stops: delivery_stops,
-          **deliveries,
+          deliveries: deliveries,
           requesterContact: {
             name: customer_name,
             phone: billing[:phone]

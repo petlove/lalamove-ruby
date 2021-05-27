@@ -5,47 +5,57 @@ http_interactions:
     uri: https://sandbox-rest.lalamove.com/v2/quotations
     body:
       encoding: UTF-8
-      string: '{"serviceType":"MOTORCYCLE","stops":[],"deliveries":[{"toStop":1,"toContact":{"name":"John
-        Iceberg","phone":"49999132508"},"remarks":"ORDER 987654321"}],"requesterContact":{"name":"John
-        Iceberg","phone":"49999132508"},"scheduleAt":"2021-05-26 16:44:33 UTC","specialRequests":[]}'
+      string: '{"serviceType":"LALAGO","stops":[],"deliveries":[{"toStop":1,"toContact":{"name":"John
+        Iceberg","phone":"+5549999132508"},"remarks":"ORDER 987654321"}],"requesterContact":{"name":"John
+        Iceberg","phone":"49999132508"},"specialRequests":[]}'
     headers:
       Content-Type:
       - application/json
       Accept:
       - application/json
       Authorization:
-      - hmac :1622047473:dfdaee412c6ae07bed76dedbcf97e576ef86717f9f946bcbf78d0a0046674681
+      - hmac TOKEN:1622147288271:10226d58e7753a07df1ecbb3846ecededc47cfec0606173236b46b2902e254a2
       X-Llm-Country:
-      - pt_BR
+      - BR_SAO
       X-Request-Id:
-      - '1622047473'
+      - '1622147288271'
       User-Agent:
       - Faraday v1.4.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
-      code: 401
-      message: Unauthorized
+      code: 409
+      message: Conflict
     headers:
       Server:
       - nginx/1.15.8
       Date:
-      - Wed, 26 May 2021 16:44:34 GMT
+      - Thu, 27 May 2021 20:28:09 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '0'
+      - '173'
       Connection:
       - keep-alive
       Access-Control-Allow-Origin:
       - "*"
       X-Llm-Session-Id:
-      - '1622047473'
+      - '1622147288271'
+      X-Ratelimit-Limit:
+      - '300'
+      X-Ratelimit-Remaining:
+      - '298'
+      X-Ratelimit-Reset:
+      - '1622147345'
       Strict-Transport-Security:
       - max-age=15724800; includeSubDomains
     body:
       encoding: UTF-8
-      string: ''
-  recorded_at: Wed, 26 May 2021 16:44:34 GMT
+      string: '{"message":"ERR_INSUFFICIENT_STOPS","detail":"Failed to validate data:
+        validator 0xc015581020 failed: object property ''stops'' validation failed:
+        fewer items than minItems"}
+
+        '
+  recorded_at: Thu, 27 May 2021 20:28:09 GMT
 recorded_with: VCR 6.0.0
