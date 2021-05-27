@@ -141,14 +141,13 @@ DEPENDENCIES
   dotenv
   dry-struct (~> 1.4.0)
   dry-types (~> 1.5.1)
-  faraday (~> 1.4.1)
   lalamove-ruby!
   pry
   rake (~> 13.0)
   rspec (~> 3.9)
   rubocop
   rubocop-performance
-  simplecov (>= 0.17.0)
+  simplecov (~> 0.21.2)
   vcr
   webmock
 
