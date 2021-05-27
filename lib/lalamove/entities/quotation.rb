@@ -7,7 +7,7 @@ module Lalamove
       attribute :stops, Types::Strict::Array.of(QuotationStop)
       attribute :deliveries, Types::Strict::Array.of(Delivery)
       attribute :requesterContact, Customer
-      attribute :scheduleAt, Types::String
+      attribute :scheduleAt, Types::String.meta(omittable: true)
       attribute :specialRequests, Types::Array
     end
   end

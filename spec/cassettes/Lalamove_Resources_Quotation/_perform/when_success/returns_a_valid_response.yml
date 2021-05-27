@@ -5,48 +5,57 @@ http_interactions:
     uri: https://sandbox-rest.lalamove.com/v2/quotations
     body:
       encoding: UTF-8
-      string: '{"serviceType":"MOTORCYCLE","stops":[{"location":{"lat":"13.740167","lng":"100.535237"},"addresses":[{"pt_BR":{"displayString":",
-        123","country":"BR"}}]}],"deliveries":[{"toStop":1,"toContact":{"name":"John
-        Iceberg","phone":"49999132508"},"remarks":"ORDER 987654321"}],"requesterContact":{"name":"John
-        Iceberg","phone":"49999132508"},"scheduleAt":"2021-05-26 16:44:31 UTC","specialRequests":[]}'
+      string: '{"serviceType":"LALAGO","stops":[{"addresses":{"pt_BR":{"displayString":"Rua
+        Dom salomão ferraz, 123 - Vila Andrade, São Paulo - SP, 05729140, Brazil","country":"BR_SAO"}}},{"addresses":{"pt_BR":{"displayString":"Rua
+        Dom salomão ferraz, 123 - Vila Andrade, São Paulo - SP, 05729140, Brazil","country":"BR_SAO"}}}],"deliveries":[{"toStop":1,"toContact":{"name":"John
+        Iceberg","phone":"+5549999132508"},"remarks":"ORDER 987654321"}],"requesterContact":{"name":"John
+        Iceberg","phone":"49999132508"},"specialRequests":[]}'
     headers:
       Content-Type:
       - application/json
       Accept:
       - application/json
       Authorization:
-      - hmac :1622047471:1fa789d5c97130ab7a695625227eb260ea1315ebf276aae1963ac83277c2c62c
+      - hmac TOKEN:1622147285113:6a5da21ee181a307fa5122e10235334a4085b91b6090404267bda81920212646
       X-Llm-Country:
-      - pt_BR
+      - BR_SAO
       X-Request-Id:
-      - '1622047471'
+      - '1622147285113'
       User-Agent:
       - Faraday v1.4.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
-      code: 401
-      message: Unauthorized
+      code: 200
+      message: OK
     headers:
       Server:
       - nginx/1.15.8
       Date:
-      - Wed, 26 May 2021 16:44:33 GMT
+      - Thu, 27 May 2021 20:28:08 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '0'
+      - '45'
       Connection:
       - keep-alive
       Access-Control-Allow-Origin:
       - "*"
       X-Llm-Session-Id:
-      - '1622047471'
+      - '1622147285113'
+      X-Ratelimit-Limit:
+      - '300'
+      X-Ratelimit-Remaining:
+      - '299'
+      X-Ratelimit-Reset:
+      - '1622147345'
       Strict-Transport-Security:
       - max-age=15724800; includeSubDomains
     body:
       encoding: UTF-8
-      string: ''
-  recorded_at: Wed, 26 May 2021 16:44:33 GMT
+      string: '{"totalFee":"9.50","totalFeeCurrency":"BRL"}
+
+        '
+  recorded_at: Thu, 27 May 2021 20:28:08 GMT
 recorded_with: VCR 6.0.0

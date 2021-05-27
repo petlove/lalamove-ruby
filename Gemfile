@@ -16,4 +16,8 @@ group :development do
   gem 'rubocop-performance'
 end
 
+group :development, :test do
+  gem 'dotenv'
+end
+
 gemspec

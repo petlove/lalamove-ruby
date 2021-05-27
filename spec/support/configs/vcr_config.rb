@@ -14,8 +14,8 @@ module VcrConfig
     end
 
     def filters(config)
-      config.filter_sensitive_data('TOKEN') { Lalamove.configuration.token }
-      config.filter_sensitive_data('SECRET') { Lalamove.configuration.secret }
+      config.filter_sensitive_data('TOKEN') { ENV['TOKEN'] }
+      config.filter_sensitive_data('SECRET') { ENV['SECRET'] }
     end
 
     def allow_cassettes

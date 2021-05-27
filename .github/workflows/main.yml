@@ -1,18 +1,26 @@
 name: Ruby
 
-on: [push,pull_request]
+# on: [push,pull_request]
+on:
+  pull_request:
+    branches: [main]
 
 jobs:
-  build:
+  build_and_test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: 2.6.4
-    - name: Run the default task
-      run: |
-        gem install bundler -v 2.2.6
-        bundle install
-        bundle exec rake
+      - uses: actions/checkout@v2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6.4
+      - name: Run the default task
+        run: |
+          gem install bundler -v 2.2.6
+          bundle install
+          bundle exec rspec
+          bundle exec rubocop
+        env:
+          SECRET: ${{ secrets.SECRET }}
+          TOKEN: ${{ secrets.TOKEN }}
+

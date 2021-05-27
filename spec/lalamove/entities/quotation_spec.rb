@@ -13,12 +13,12 @@ RSpec.describe Lalamove::Entities::Quotation do
             lat: '13.740167',
             lng: '100.535237'
           },
-          addresses: [
+          addresses: {
             pt_BR: {
               displayString: 'Rua Dom Salomão Ferraz, 123',
               country: 'TH'
             }
-          ]
+          }
         }
       ],
       deliveries: [

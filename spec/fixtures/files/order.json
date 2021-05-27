@@ -11,7 +11,7 @@
     "lastname": "Iceberg",
     "neighborhood": "Palmital",
     "phone": "49999132508",
-    "reference": "Pr\u00f3x a Adega Viel ",
+    "reference": "Próx a Adega Viel ",
     "state": "SC",
     "state_id": 80,
     "zipcode": "89814170"
@@ -378,21 +378,21 @@
     }
   ],
   "shipping_address": {
-    "address1": "Rua Saad Ant\u00f4nio Sarquis",
+    "address1": "Rua Dom salomão ferraz",
     "address2": "D",
-    "city": "Chapec\u00f3",
+    "city": "São Paulo",
     "country": "BR",
     "country_id": 61,
     "firstname": "John Iceberg",
     "house_number": "123",
     "id": 32186482,
     "lastname": ".",
-    "neighborhood": "Palmital",
+    "neighborhood": "Vila Andrade",
     "phone": "49999132508",
     "reference": "Pr\u00f3x a Adega Viel ",
-    "state": "SC",
+    "state": "SP",
     "state_id": 80,
-    "zipcode": "89814170"
+    "zipcode": "05729140"
   },
   "shipping_instructions": null,
   "state": "integrated",

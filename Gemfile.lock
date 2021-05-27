@@ -138,9 +138,10 @@ PLATFORMS
 DEPENDENCIES
   active_service!
   bundler (~> 2.1.4)
-  dotenv (~> 2.7.5)
+  dotenv
   dry-struct (~> 1.4.0)
   dry-types (~> 1.5.1)
+  faraday (~> 1.4.1)
   lalamove-ruby!
   pry
   rake (~> 13.0)

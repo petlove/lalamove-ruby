@@ -6,9 +6,11 @@ require 'support/configs/simple_cov_config'
 
 SimpleCovConfig.configure
 
-# require 'lalamove/ruby'
 require 'lalamove'
+require 'dotenv'
 require 'pry'
+
+Dotenv.load('.env.test')
 
 Dir[File.expand_path(File.join(File.dirname(__FILE__), 'support', '**', '*.rb'))].sort.each do |f|
   require f
@@ -20,7 +22,8 @@ RSpec.configure do |config|
 
   config.before(:each) do
     Lalamove.configuration.production = false
-    Lalamove.configuration.secret = 'MCwCAQACBQDDym2lAgMBAAECBDHB'
+    Lalamove.configuration.secret = ENV['SECRET']
+    Lalamove.configuration.token = ENV['TOKEN']
   end
 
   # Disable RSpec exposing methods globally on `Module` and `main`
