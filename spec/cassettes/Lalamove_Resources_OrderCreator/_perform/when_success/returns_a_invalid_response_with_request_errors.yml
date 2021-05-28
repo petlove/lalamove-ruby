@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox-rest.lalamove.com/v2/orders
+    body:
+      encoding: UTF-8
+      string: '{"serviceType":"LALAGO","stops":[{"addresses":{"pt_BR":{"displayString":"","country":"BR_SAO"}}},{"addresses":{"pt_BR":{"displayString":",
+        ,  - ,  - , , Brazil","country":"BR_SAO"}}}],"deliveries":[{"toStop":1,"toContact":{"name":"
+        ","phone":"+55"},"remarks":"ORDER H30667067133"}],"requesterContact":{"name":"São
+        Paulo CD","phone":"+551133350200"},"specialRequests":[],"quotedTotalFee":{"amount":"108000","currency":"BRL"},"sms":false,"pod":true,"fleetOption":"FLEET_ALL"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - hmac TOKEN:1622234415567:f880bf04f5d044ca1507013e0c543279f3dde3feb7653184b6b26083e5f543f4
+      X-Llm-Country:
+      - BR_SAO
+      X-Request-Id:
+      - '1622234415567'
+      User-Agent:
+      - Faraday v1.4.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 409
+      message: Conflict
+    headers:
+      Server:
+      - nginx/1.15.8
+      Date:
+      - Fri, 28 May 2021 20:40:16 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '333'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Llm-Session-Id:
+      - '1622234415567'
+      X-Ratelimit-Limit:
+      - '300'
+      X-Ratelimit-Remaining:
+      - '298'
+      X-Ratelimit-Reset:
+      - '1622234472'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"message":"ERR_REQUIRED_FIELD","detail":"Failed to validate data:
+        validator 0xc0155f0c30 failed: object property ''stops'' validation failed:
+        object property ''addresses'' validation failed: object property ''pt_BR''
+        validation failed: object property ''displayString'' validation failed: string
+        '''' does not match regular expression ''.+''"}
+
+        '
+  recorded_at: Fri, 28 May 2021 20:40:16 GMT
+recorded_with: VCR 6.0.0
