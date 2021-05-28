@@ -8,7 +8,7 @@ http_interactions:
       string: '{"serviceType":"LALAGO","stops":[{"addresses":{"pt_BR":{"displayString":"Av.
         Dr. Cardoso de Melo, 1155 - Vila Olimpia, São Paulo - SP, 04548-004, Brazil","country":"BR_SAO"}}},{"addresses":{"pt_BR":{"displayString":"Rua
         Dom salomão ferraz, 1, 1 - Vila Andrade, São Paulo - SP, 05729140, Brazil","country":"BR_SAO"}}}],"deliveries":[{"toStop":1,"toContact":{"name":"Anderson
-        Ferreira","phone":"+5511970009090"},"remarks":"ORDER H30667067133"}],"requesterContact":{"name":"São
+        Ferreira","phone":"+5511970009090"},"remarks":"ORDER 123456789"}],"requesterContact":{"name":"São
         Paulo","phone":"+551133350200"},"specialRequests":[]}'
     headers:
       Content-Type:
@@ -16,11 +16,11 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - hmac TOKEN:1622223116493:f5f397096f68c0b20539de5874eada56867e69909a57efd82c8e7ad68269cce7
+      - hmac TOKEN:1622224296829:a4daf1219c2165a010a8d720f503167533b15f87a3704a5e512d38ae79d34df9
       X-Llm-Country:
       - BR_SAO
       X-Request-Id:
-      - '1622223116493'
+      - '1622224296829'
       User-Agent:
       - Faraday v1.4.2
       Accept-Encoding:
@@ -33,7 +33,7 @@ http_interactions:
       Server:
       - nginx/1.15.8
       Date:
-      - Fri, 28 May 2021 17:31:59 GMT
+      - Fri, 28 May 2021 17:51:38 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -43,13 +43,13 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Llm-Session-Id:
-      - '1622223116493'
+      - '1622224296829'
       X-Ratelimit-Limit:
       - '300'
       X-Ratelimit-Remaining:
       - '299'
       X-Ratelimit-Reset:
-      - '1622223176'
+      - '1622224357'
       Strict-Transport-Security:
       - max-age=15724800; includeSubDomains
     body:
@@ -57,5 +57,5 @@ http_interactions:
       string: '{"totalFee":"16.29","totalFeeCurrency":"BRL"}
 
         '
-  recorded_at: Fri, 28 May 2021 17:31:59 GMT
+  recorded_at: Fri, 28 May 2021 17:51:39 GMT
 recorded_with: VCR 6.0.0
