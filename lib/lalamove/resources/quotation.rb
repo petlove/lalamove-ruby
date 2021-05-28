@@ -5,6 +5,8 @@ module Lalamove
     class Quotation < ActiveService::Base
       def initialize(params)
         @params = params
+        @stock_location = params[:stock_location]
+        @orders = params[:orders].to_a
       end
 
       def perform
@@ -13,67 +15,68 @@ module Lalamove
 
       private
 
-      attr_reader :params
+      attr_reader :params, :stock_location, :orders
 
       def process
         Lalamove::Services::QuotationService.perform!(payload)
       end
 
       def deliveries
-        [
+        orders.each_with_index.map do |order, pos|
+          shipping = order[:shipping_address]
           {
-            toStop: 1,
+            toStop: pos + 1,
             toContact: {
-              name: customer_name,
-              phone: "+55#{billing[:phone]}"
+              name: [shipping[:firstname], shipping[:lastname]].join(' '),
+              phone: "+55#{shipping[:phone]}"
             },
-            remarks: "ORDER #{params[:number]}"
-          }
-        ]
-      end
-
-      def long_address(address)
-        "#{address[:address1]}, #{address[:house_number]} - #{address[:neighborhood]}, "\
-        "#{address[:city]} - #{address[:state]}, #{address[:zipcode]}, Brazil"
-      end
-
-      def delivery_stops
-        [params[:shipping_address], params[:shipping_address]].compact.map do |address|
-          {
-            # location: {
-            #   lat: '-23.519658',
-            #   lng: '-46.679692'
-            # },
-            addresses: {
-              pt_BR: {
-                displayString: long_address(address),
-                country: 'BR_SAO'
-              }
-            }
+            remarks: "ORDER #{order[:number]}"
           }
         end
       end
 
+      def long_address(address)
+        "#{address[:address1]}, #{address[:house_number]}, #{address[:address2]} "\
+        "- #{address[:neighborhood]}, #{address[:city]} - #{address[:state]}, "\
+        "#{address[:zipcode]}, Brazil"
+      end
+
+      def addresses(address, country)
+        {
+          addresses: {
+            # location: {
+            #   lat: '-23.519658',
+            #   lng: '-46.679692'
+            # },
+            pt_BR: {
+              displayString: address,
+              country: country
+            }
+          }
+        }
+      end
+
+      def delivery_stops
+        stops = []
+        stops << addresses(stock_location[:address1], 'BR_SAO')
+
+        orders.each { |order| stops << addresses(long_address(order[:shipping_address]), 'BR_SAO') }
+
+        stops
+      end
+
       def payload
         {
-          # scheduleAt: (Time.now + 2).utc.iso8601,
+          # scheduleAt: (Time.now).utc.iso8601,
           serviceType: 'LALAGO',
           stops: delivery_stops,
           deliveries: deliveries,
           requesterContact: {
-            name: customer_name,
-            phone: billing[:phone]
+            name: stock_location[:name],
+            phone: stock_location[:phone]
           },
           specialRequests: []
         }
-      end
-
-      def customer_name
-        @customer_name ||= [billing[:firstname], billing[:lastname]].join(' ')
-      end
-
-      def billing
-        @billing ||= params[:billing_address]
       end
     end
   end
