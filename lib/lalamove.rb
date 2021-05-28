@@ -19,6 +19,7 @@ require 'lalamove/entities/delivery'
 require 'lalamove/entities/quotation_location'
 require 'lalamove/entities/quotation_stop'
 require 'lalamove/entities/quotation'
+require 'lalamove/entities/order'
 
 require 'lalamove/resources/quotation'
 
