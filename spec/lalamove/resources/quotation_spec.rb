@@ -6,7 +6,7 @@ RSpec.describe Lalamove::Resources::Quotation do
   let(:payload) { params_from_json('order') }
 
   describe '#perform', :vcr do
-    subject { described_class.perform!(payload) }
+    subject { described_class.perform!(stock_location: payload[:stock_location], orders: [payload]) }
 
     context 'when success' do
       it 'returns a valid response' do
