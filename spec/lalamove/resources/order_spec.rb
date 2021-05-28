@@ -2,21 +2,20 @@
 
 require 'spec_helper'
 
-RSpec.describe Lalamove::Resources::Quotation do
+RSpec.describe Lalamove::Resources::Order do
   let(:payload) { params_from_json('order') }
 
   describe '#perform', :vcr do
     subject { described_class.perform!(payload) }
 
-    context 'when order is valid' do
+    context 'with a valid quotation to create an order' do
       it 'returns a valid response' do
-        expect(Lalamove::Services::QuotationService).to receive(:perform!).once.and_call_original
 
         is_expected.to be_valid
       end
     end
 
-    context 'when order is invalid' do
+    context 'with an invalid quotation to create order' do
       let(:payload) { params_from_json('invalid_order') }
 
       it 'returns a invalid response with request errors' do
