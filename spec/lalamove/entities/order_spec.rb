@@ -40,12 +40,12 @@ RSpec.describe Lalamove::Entities::Order do
         phone: '5511999999999'
       },
       specialRequests: ['COD'],
-      fleetOption: "FLEET_FIRST",
+      fleetOption: 'FLEET_FIRST',
       sms: false,
       pod: false,
       quotedTotalFee: {
-        amount: "108000",
-        currency: "THB"
+        amount: '108000',
+        currency: 'THB'
       }
     }
   end

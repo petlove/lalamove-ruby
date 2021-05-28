@@ -5,8 +5,8 @@ require 'spec_helper'
 RSpec.describe Lalamove::Entities::QuotedTotalFee do
   let(:attributes) do
     {
-      amount: "1",
-      currency: "BTC"
+      amount: '1',
+      currency: 'BTC'
     }
   end
 
