@@ -9,40 +9,46 @@ RSpec.describe Lalamove::Entities::Order do
 
   subject { described_class.new(attributes) }
 
+  let(:quotation_attributes) do
+    {
+      scheduleAt: '2020-09-01T14:30:00.00Z',
+      serviceType: 'MOTORCYCLE',
+      stops: [
+        {
+          location: {
+            lat: '13.740167',
+            lng: '100.535237'
+          },
+          addresses: {
+            pt_BR: {
+              displayString: 'Rua Dom Salomão Ferraz, 123',
+              country: 'TH'
+            }
+          }
+        }
+      ],
+      deliveries: [
+        {
+          toStop: 1,
+          toContact: {
+            name: 'Person',
+            phone: '5511999999999'
+          },
+          remarks: 'ORDER#94\r\n1. Tshirt จำนวน 1\r\n2. Hoodie จำนวน 1\r\n'
+        }
+      ],
+      requesterContact: {
+        name: 'Person',
+        phone: '5511999999999'
+      },
+      specialRequests: ['COD']
+    }
+  end
+
   context 'including optional order attributes' do
     let(:attributes) do
       {
-        scheduleAt: '2020-09-01T14:30:00.00Z',
-        serviceType: 'MOTORCYCLE',
-        stops: [
-          {
-            location: {
-              lat: '13.740167',
-              lng: '100.535237'
-            },
-            addresses: {
-              pt_BR: {
-                displayString: 'Rua Dom Salomão Ferraz, 123',
-                country: 'TH'
-              }
-            }
-          }
-        ],
-        deliveries: [
-          {
-            toStop: 1,
-            toContact: {
-              name: 'Person',
-              phone: '5511999999999'
-            },
-            remarks: 'ORDER#94\r\n1. Tshirt จำนวน 1\r\n2. Hoodie จำนวน 1\r\n'
-          }
-        ],
-        requesterContact: {
-          name: 'Person',
-          phone: '5511999999999'
-        },
-        specialRequests: ['COD'],
+        **quotation_attributes,
         fleetOption: 'FLEET_FIRST',
         sms: true,
         pod: true,
@@ -61,37 +67,7 @@ RSpec.describe Lalamove::Entities::Order do
   context 'without optional attributes' do
     let(:attributes) do
       {
-        scheduleAt: '2020-09-01T14:30:00.00Z',
-        serviceType: 'MOTORCYCLE',
-        stops: [
-          {
-            location: {
-              lat: '13.740167',
-              lng: '100.535237'
-            },
-            addresses: {
-              pt_BR: {
-                displayString: 'Rua Dom Salomão Ferraz, 123',
-                country: 'TH'
-              }
-            }
-          }
-        ],
-        deliveries: [
-          {
-            toStop: 1,
-            toContact: {
-              name: 'Person',
-              phone: '5511999999999'
-            },
-            remarks: 'ORDER#94\r\n1. Tshirt จำนวน 1\r\n2. Hoodie จำนวน 1\r\n'
-          }
-        ],
-        requesterContact: {
-          name: 'Person',
-          phone: '5511999999999'
-        },
-        specialRequests: ['COD'],
+        **quotation_attributes,
         quotedTotalFee: {
           amount: '108000',
           currency: 'THB'
