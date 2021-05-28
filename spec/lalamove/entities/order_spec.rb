@@ -39,7 +39,14 @@ RSpec.describe Lalamove::Entities::Order do
         name: 'Person',
         phone: '5511999999999'
       },
-      specialRequests: ['COD']
+      specialRequests: ['COD'],
+      fleetOption: "FLEET_FIRST",
+      sms: false,
+      pod: false,
+      quotedTotalFee: {
+        amount: "108000",
+        currency: "THB"
+      }
     }
   end
 
