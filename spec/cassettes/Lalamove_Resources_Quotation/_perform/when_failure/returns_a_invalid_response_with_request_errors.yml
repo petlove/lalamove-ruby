@@ -15,13 +15,13 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - hmac TOKEN:1622224299151:8c107460e291402698fdb8cc1f49f6d0bc9877e59ab5c92610791ec723a85ba7
+      - hmac TOKEN:1622481030818:3d68e075937a52c48756ebdb4401c2f3d8692bcf60c2a483a6d4efa2a7efa547
       X-Llm-Country:
       - BR_SAO
       X-Request-Id:
-      - '1622224299151'
+      - '1622481030818'
       User-Agent:
-      - Faraday v1.4.2
+      - Faraday v1.1.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
@@ -32,7 +32,7 @@ http_interactions:
       Server:
       - nginx/1.15.8
       Date:
-      - Fri, 28 May 2021 17:51:40 GMT
+      - Mon, 31 May 2021 17:10:32 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -42,23 +42,23 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Llm-Session-Id:
-      - '1622224299151'
+      - '1622481030818'
       X-Ratelimit-Limit:
       - '300'
       X-Ratelimit-Remaining:
-      - '298'
+      - '296'
       X-Ratelimit-Reset:
-      - '1622224357'
+      - '1622481086'
       Strict-Transport-Security:
       - max-age=15724800; includeSubDomains
     body:
       encoding: UTF-8
       string: '{"message":"ERR_REQUIRED_FIELD","detail":"Failed to validate data:
-        validator 0xc017281230 failed: object property ''stops'' validation failed:
+        validator 0xc0196abec0 failed: object property ''stops'' validation failed:
         object property ''addresses'' validation failed: object property ''pt_BR''
         validation failed: object property ''displayString'' validation failed: string
         '''' does not match regular expression ''.+''"}
 
         '
-  recorded_at: Fri, 28 May 2021 17:51:40 GMT
+  recorded_at: Mon, 31 May 2021 17:10:32 GMT
 recorded_with: VCR 6.0.0

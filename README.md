@@ -53,7 +53,9 @@ It will generate an simple Lalamove cliente configuraion. Howevere if you prefer
 ##### Quotation
 
 ```ruby
-Lalamove::Client.quotation.perform(stock_location: stock, orders: payload)
+Lalamove::Client.quotation.perform!(stock_location: stock, orders: payload)
+or
+Lalamove.client.quotation.perform!(stock_location: stock, orders: payload)
 ```
 <details>
 
@@ -116,7 +118,7 @@ Lalamove::Client.quotation.perform(stock_location: stock, orders: payload)
 ##### Order Creator
 
 ```ruby
-Lalamove::Client.order_creator.perform(stock_location: stock, orders: payload)
+Lalamove::Client.order_creator.perform!(stock_location: stock, orders: payload)
 ```
 <details>
 
@@ -182,6 +184,81 @@ Lalamove::Client.order_creator.perform(stock_location: stock, orders: payload)
 ```
 </details>
 
+##### Place Order (quotation and creation)
+
+```ruby
+Lalamove::Client.place_order.perform!(stock_location: stock, orders: payload)
+```
+<details>
+
+<summary>Payload example</summary>
+
+```
+{
+  "stock_location":{
+    "name":"São Paulo",
+      "address1":"Av. Dr. Cardoso de Melo, 1 - Vila Olimpia, São Paulo - SP, 04548-004, Brazil",
+      "address2":"",
+      "loggi_shop_pk":null,
+      "additional_shipping_time": null,
+      "phone": "+551133350200"
+  },
+    [
+    {
+      "id":1,
+      "number":"123456789",
+      "cost":"8.9",
+      "state":"en_route",
+      "shipment_line_items":[
+      {
+        "quantity":1,
+        "depth":7.0,
+        "weight":0.013,
+        "width":2.0,
+        "height":10.0
+      }
+      ],
+      "order_number":"123456",
+      "email":"anderson.ferreira@petlove.com.br",
+      "estimated_delivery_date":"2021-05-28",
+      "updated_at":"2021-05-27T19:37:56Z",
+      "created_at":"2021-05-27T19:34:21Z",
+      "shop_name":"FOO BAR BAZ LTDA",
+      "shop_full_address":null,
+      "shipping_address":{
+        "firstname":"Anderson",
+        "lastname":"Ferreira",
+        "address1":"Rua Dom salomão ferraz",
+        "address2":"1",
+        "zipcode":"05729140",
+        "city":"São Paulo",
+        "state_id":70,
+        "state":"SP",
+        "country":"BR",
+        "phone":"11970009090",
+        "house_number":"1",
+        "neighborhood":"Vila Andrade",
+        "reference":null
+      },
+      "quotedTotalFee": {
+        "amount": "10.00",
+        "currency": Lalamove.configuration.currency
+      },
+      "sms": false,
+      "pod": true,
+      "fleetOption": "FLEET_ALL"
+    }
+  ]
+}
+```
+</details>
+
+
+##### Order cancel
+
+```ruby
+Lalamove::Client.order_cancel.perform!('123456789')
+```
 
 ## Development
 
