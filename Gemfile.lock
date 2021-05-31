@@ -11,6 +11,8 @@ PATH
     lalamove (0.1.1)
       activesupport (>= 5, < 7)
       awesome_print
+      dry-struct (~> 1.4.0)
+      dry-types (~> 1.5.1)
       faraday (~> 1.1.0)
 
 GEM
@@ -129,8 +131,6 @@ DEPENDENCIES
   active_service!
   bundler (~> 2.1.4)
   dotenv
-  dry-struct (~> 1.4.0)
-  dry-types (~> 1.5.1)
   lalamove!
   pry
   rake (~> 13.0)
