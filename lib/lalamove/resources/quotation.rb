@@ -48,7 +48,7 @@ module Lalamove
             #   lat: '-23.519658',
             #   lng: '-46.679692'
             # },
-            pt_BR: {
+            Lalamove.configuration.country => {
               displayString: address,
               country: country
             }
@@ -58,9 +58,14 @@ module Lalamove
 
       def delivery_stops
         stops = []
-        stops << addresses(stock_location[:address1], 'BR_SAO')
+        stops << addresses(stock_location[:address1], Lalamove.configuration.city)
 
-        orders.each { |order| stops << addresses(long_address(order[:shipping_address]), 'BR_SAO') }
+        orders.each do |order|
+          stops << addresses(
+            long_address(order[:shipping_address]),
+            Lalamove.configuration.city
+          )
+        end
 
         stops
       end

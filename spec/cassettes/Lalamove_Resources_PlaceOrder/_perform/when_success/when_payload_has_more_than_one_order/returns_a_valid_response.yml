@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox-rest.lalamove.com/v2/orders
+    body:
+      encoding: UTF-8
+      string: '{"serviceType":"LALAGO","stops":[{"addresses":{"pt_BR":{"displayString":"Av.
+        Dr. Cardoso de Melo, 1155 - Vila Olimpia, São Paulo - SP, 04548-004, Brazil","country":"BR_SAO"}}},{"addresses":{"pt_BR":{"displayString":"Rua
+        Dom salomão ferraz, 1, 1 - Vila Andrade, São Paulo - SP, 05729140, Brazil","country":"BR_SAO"}}},{"addresses":{"pt_BR":{"displayString":"Rua
+        Dom salomão ferraz, 1, 1 - Vila Andrade, São Paulo - SP, 05729140, Brazil","country":"BR_SAO"}}}],"deliveries":[{"toStop":1,"toContact":{"name":"Anderson
+        Ferreira","phone":"+5511970009090"},"remarks":"ORDER 123456789"},{"toStop":2,"toContact":{"name":"Anderson
+        Ferreira","phone":"+5511970009090"},"remarks":"ORDER 123456789"}],"requesterContact":{"name":"São
+        Paulo","phone":"+551133350200"},"specialRequests":[],"quotedTotalFee":{"amount":"17.39","currency":"BRL"},"sms":false,"pod":true,"fleetOption":"FLEET_ALL"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - hmac TOKEN:1622469806471:e13e9a842011a1944e1e6f1336f4bdf93a6d51a3bbdc439fd68acaddf23b9634
+      X-Llm-Country:
+      - BR_SAO
+      X-Request-Id:
+      - '1622469806471'
+      User-Agent:
+      - Faraday v1.4.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.15.8
+      Date:
+      - Mon, 31 May 2021 14:03:35 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '35'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Llm-Session-Id:
+      - '1622469806471'
+      X-Ratelimit-Limit:
+      - '300'
+      X-Ratelimit-Remaining:
+      - '299'
+      X-Ratelimit-Reset:
+      - '1622469872'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"orderRef":"1004147474799005696"}
+
+        '
+  recorded_at: Mon, 31 May 2021 14:03:35 GMT
+recorded_with: VCR 6.0.0

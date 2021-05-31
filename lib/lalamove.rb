@@ -19,11 +19,16 @@ require 'lalamove/entities/delivery'
 require 'lalamove/entities/quotation_location'
 require 'lalamove/entities/quotation_stop'
 require 'lalamove/entities/quotation'
+require 'lalamove/entities/quoted_total_fee'
+require 'lalamove/entities/order'
 
 require 'lalamove/resources/quotation'
+require 'lalamove/resources/order_creator'
+require 'lalamove/resources/place_order'
 
 require 'lalamove/services/request_service'
 require 'lalamove/services/quotation_service'
+require 'lalamove/services/order_creator_service'
 
 module Lalamove
   def self.configuration
