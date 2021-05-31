@@ -2,6 +2,7 @@
 
 require 'bundler/setup'
 require 'lalamove'
+require 'simplecov'
 require 'dotenv'
 require 'pry'
 
