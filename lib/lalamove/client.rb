@@ -2,10 +2,22 @@
 
 module Lalamove
   class Client
-    def initialize; end
+    class << self
+      def quotation
+        Lalamove::Resources::Quotation
+      end
 
-    def quotation
-      Lalamove::Resources::Quotation
+      def order_creator
+        Lalamove::Resources::OrderCreator
+      end
+
+      def place_order
+        Lalamove::Resources::PlaceOrder
+      end
+
+      def order_cancel
+        Lalamove::Resources::OrderCancel
+      end
     end
   end
 end

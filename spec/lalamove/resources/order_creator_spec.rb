@@ -16,7 +16,7 @@ RSpec.describe Lalamove::Resources::OrderCreator do
       end
     end
 
-    context 'when success' do
+    context 'when failure' do
       let(:payload) { params_from_json('invalid_order') }
 
       it 'returns a invalid response with request errors' do
