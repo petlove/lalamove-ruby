@@ -1,0 +1,125 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox-rest.lalamove.com/v2/quotations
+    body:
+      encoding: UTF-8
+      string: '{"serviceType":"LALAGO","stops":[{"addresses":{"pt_BR":{"displayString":"","country":"BR_SAO"}}},{"addresses":{"pt_BR":{"displayString":",
+        ,  - ,  - , , Brazil","country":"BR_SAO"}}}],"deliveries":[{"toStop":1,"toContact":{"name":"
+        ","phone":"+55"},"remarks":"ORDER H30667067133"}],"requesterContact":{"name":"São
+        Paulo CD","phone":"+551133350200"},"specialRequests":[]}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - hmac TOKEN:1622467680975:cd6368bb268d2979e429ae48593527eb799800845d4d8d5e86d2927e64c8d9da
+      X-Llm-Country:
+      - BR_SAO
+      X-Request-Id:
+      - '1622467680975'
+      User-Agent:
+      - Faraday v1.4.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 409
+      message: Conflict
+    headers:
+      Server:
+      - nginx/1.15.8
+      Date:
+      - Mon, 31 May 2021 13:28:06 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '333'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Llm-Session-Id:
+      - '1622467680975'
+      X-Ratelimit-Limit:
+      - '300'
+      X-Ratelimit-Remaining:
+      - '299'
+      X-Ratelimit-Reset:
+      - '1622467745'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"message":"ERR_REQUIRED_FIELD","detail":"Failed to validate data:
+        validator 0xc019689cb0 failed: object property ''stops'' validation failed:
+        object property ''addresses'' validation failed: object property ''pt_BR''
+        validation failed: object property ''displayString'' validation failed: string
+        '''' does not match regular expression ''.+''"}
+
+        '
+  recorded_at: Mon, 31 May 2021 13:28:06 GMT
+- request:
+    method: post
+    uri: https://sandbox-rest.lalamove.com/v2/orders
+    body:
+      encoding: UTF-8
+      string: '{"serviceType":"LALAGO","stops":[{"addresses":{"pt_BR":{"displayString":"","country":"BR_SAO"}}},{"addresses":{"pt_BR":{"displayString":",
+        ,  - ,  - , , Brazil","country":"BR_SAO"}}}],"deliveries":[{"toStop":1,"toContact":{"name":"
+        ","phone":"+55"},"remarks":"ORDER H30667067133"}],"requesterContact":{"name":"São
+        Paulo CD","phone":"+551133350200"},"specialRequests":[],"quotedTotalFee":{"amount":"8.9","currency":"BRL"},"sms":false,"pod":true,"fleetOption":"FLEET_ALL"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - hmac TOKEN:1622467686753:57f777d3ed3d4e9bd2ab529f457f7cc645593175e3dd9fa43d1bbf88b089abcb
+      X-Llm-Country:
+      - BR_SAO
+      X-Request-Id:
+      - '1622467686753'
+      User-Agent:
+      - Faraday v1.4.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 409
+      message: Conflict
+    headers:
+      Server:
+      - nginx/1.15.8
+      Date:
+      - Mon, 31 May 2021 13:28:08 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '333'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Llm-Session-Id:
+      - '1622467686753'
+      X-Ratelimit-Limit:
+      - '300'
+      X-Ratelimit-Remaining:
+      - '298'
+      X-Ratelimit-Reset:
+      - '1622467745'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"message":"ERR_REQUIRED_FIELD","detail":"Failed to validate data:
+        validator 0xc00076ef00 failed: object property ''stops'' validation failed:
+        object property ''addresses'' validation failed: object property ''pt_BR''
+        validation failed: object property ''displayString'' validation failed: string
+        '''' does not match regular expression ''.+''"}
+
+        '
+  recorded_at: Mon, 31 May 2021 13:28:08 GMT
+recorded_with: VCR 6.0.0

@@ -2,11 +2,21 @@
 
 module Lalamove
   module Resources
-    class OrderCreator < Quotation
+    class PlaceOrder < OrderCreator
       private
 
-      def process
+      def quotation
+        @quotation ||= Lalamove::Services::QuotationService.perform!(payload)
+      end
+
+      def creation
         Lalamove::Services::OrderCreatorService.perform!(payload)
+      end
+
+      def process
+        return quotation unless quotation.valid?
+
+        creation
       end
 
       def payload

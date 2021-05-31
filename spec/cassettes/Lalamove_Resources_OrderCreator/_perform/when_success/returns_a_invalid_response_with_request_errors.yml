@@ -8,18 +8,18 @@ http_interactions:
       string: '{"serviceType":"LALAGO","stops":[{"addresses":{"pt_BR":{"displayString":"","country":"BR_SAO"}}},{"addresses":{"pt_BR":{"displayString":",
         ,  - ,  - , , Brazil","country":"BR_SAO"}}}],"deliveries":[{"toStop":1,"toContact":{"name":"
         ","phone":"+55"},"remarks":"ORDER H30667067133"}],"requesterContact":{"name":"São
-        Paulo CD","phone":"+551133350200"},"specialRequests":[],"quotedTotalFee":{"amount":"108000","currency":"BRL"},"sms":false,"pod":true,"fleetOption":"FLEET_ALL"}'
+        Paulo CD","phone":"+551133350200"},"specialRequests":[],"quotedTotalFee":{"amount":"8.9","currency":"BRL"},"sms":false,"pod":true,"fleetOption":"FLEET_ALL"}'
     headers:
       Content-Type:
       - application/json
       Accept:
       - application/json
       Authorization:
-      - hmac TOKEN:1622234415567:f880bf04f5d044ca1507013e0c543279f3dde3feb7653184b6b26083e5f543f4
+      - hmac TOKEN:1622239164143:2e1998923297fc80ce8afb01ae550b3a74fba24b89b66fa9db056f55d838bcac
       X-Llm-Country:
       - BR_SAO
       X-Request-Id:
-      - '1622234415567'
+      - '1622239164143'
       User-Agent:
       - Faraday v1.4.2
       Accept-Encoding:
@@ -32,7 +32,7 @@ http_interactions:
       Server:
       - nginx/1.15.8
       Date:
-      - Fri, 28 May 2021 20:40:16 GMT
+      - Fri, 28 May 2021 21:59:25 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -42,23 +42,23 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       X-Llm-Session-Id:
-      - '1622234415567'
+      - '1622239164143'
       X-Ratelimit-Limit:
       - '300'
       X-Ratelimit-Remaining:
       - '298'
       X-Ratelimit-Reset:
-      - '1622234472'
+      - '1622239222'
       Strict-Transport-Security:
       - max-age=15724800; includeSubDomains
     body:
       encoding: UTF-8
       string: '{"message":"ERR_REQUIRED_FIELD","detail":"Failed to validate data:
-        validator 0xc0155f0c30 failed: object property ''stops'' validation failed:
+        validator 0xc01a9c96e0 failed: object property ''stops'' validation failed:
         object property ''addresses'' validation failed: object property ''pt_BR''
         validation failed: object property ''displayString'' validation failed: string
         '''' does not match regular expression ''.+''"}
 
         '
-  recorded_at: Fri, 28 May 2021 20:40:16 GMT
+  recorded_at: Fri, 28 May 2021 21:59:25 GMT
 recorded_with: VCR 6.0.0

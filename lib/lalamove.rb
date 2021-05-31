@@ -24,6 +24,7 @@ require 'lalamove/entities/order'
 
 require 'lalamove/resources/quotation'
 require 'lalamove/resources/order_creator'
+require 'lalamove/resources/place_order'
 
 require 'lalamove/services/request_service'
 require 'lalamove/services/quotation_service'

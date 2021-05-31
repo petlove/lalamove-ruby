@@ -2,25 +2,25 @@
 http_interactions:
 - request:
     method: post
-    uri: https://sandbox-rest.lalamove.com/v2/quotations
+    uri: https://sandbox-rest.lalamove.com/v2/orders
     body:
       encoding: UTF-8
       string: '{"serviceType":"LALAGO","stops":[{"addresses":{"pt_BR":{"displayString":"Av.
         Dr. Cardoso de Melo, 1155 - Vila Olimpia, São Paulo - SP, 04548-004, Brazil","country":"BR_SAO"}}},{"addresses":{"pt_BR":{"displayString":"Rua
         Dom salomão ferraz, 1, 1 - Vila Andrade, São Paulo - SP, 05729140, Brazil","country":"BR_SAO"}}}],"deliveries":[{"toStop":1,"toContact":{"name":"Anderson
         Ferreira","phone":"+5511970009090"},"remarks":"ORDER 123456789"}],"requesterContact":{"name":"São
-        Paulo","phone":"+551133350200"},"specialRequests":[]}'
+        Paulo","phone":"+551133350200"},"specialRequests":[],"quotedTotalFee":{"amount":"16.29","currency":"BRL"},"sms":false,"pod":true,"fleetOption":"FLEET_ALL"}'
     headers:
       Content-Type:
       - application/json
       Accept:
       - application/json
       Authorization:
-      - hmac TOKEN:1622239161383:2fbbf894e7f40010ec4724b78c7e6c09017e2f47870d7107aa300fffec24fe1b
+      - hmac TOKEN:1622467697367:6af0aed37e789e708e2817e9cc569d652b86a9f14fee74ee21496452c149e99f
       X-Llm-Country:
       - BR_SAO
       X-Request-Id:
-      - '1622239161383'
+      - '1622467697367'
       User-Agent:
       - Faraday v1.4.2
       Accept-Encoding:
@@ -33,29 +33,29 @@ http_interactions:
       Server:
       - nginx/1.15.8
       Date:
-      - Fri, 28 May 2021 21:59:23 GMT
+      - Mon, 31 May 2021 13:28:23 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '46'
+      - '35'
       Connection:
       - keep-alive
       Access-Control-Allow-Origin:
       - "*"
       X-Llm-Session-Id:
-      - '1622239161383'
+      - '1622467697367'
       X-Ratelimit-Limit:
       - '300'
       X-Ratelimit-Remaining:
-      - '299'
+      - '297'
       X-Ratelimit-Reset:
-      - '1622239222'
+      - '1622467745'
       Strict-Transport-Security:
       - max-age=15724800; includeSubDomains
     body:
       encoding: UTF-8
-      string: '{"totalFee":"16.29","totalFeeCurrency":"BRL"}
+      string: '{"orderRef":"1004138616512843776"}
 
         '
-  recorded_at: Fri, 28 May 2021 21:59:24 GMT
+  recorded_at: Mon, 31 May 2021 13:28:23 GMT
 recorded_with: VCR 6.0.0
