@@ -5,6 +5,7 @@ require 'simplecov_json_formatter'
 module SimpleCovConfig
   def self.configure
     SimpleCov.formatter = SimpleCov::Formatter::JSONFormatter
+
     SimpleCov.minimum_coverage 90
     SimpleCov.start do
       add_filter { |source_file| cover?(source_file.lines) }
