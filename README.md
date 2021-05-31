@@ -260,6 +260,12 @@ Lalamove::Client.place_order.perform!(stock_location: stock, orders: payload)
 Lalamove::Client.order_cancel.perform!('123456789')
 ```
 
+##### Order details
+
+```ruby
+Lalamove::Client.order_detail.perform!('123456789')
+```
+
 ## Development
 
 It is possible make your own quotation tests by adding your own keys in a `.env` file an example is available as `.env.sample`.

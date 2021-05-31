@@ -26,11 +26,13 @@ require 'lalamove/resources/quotation'
 require 'lalamove/resources/order_creator'
 require 'lalamove/resources/place_order'
 require 'lalamove/resources/order_cancel'
+require 'lalamove/resources/order_detail'
 
 require 'lalamove/services/request_service'
 require 'lalamove/services/quotation_service'
 require 'lalamove/services/order_creator_service'
 require 'lalamove/services/order_cancel_service'
+require 'lalamove/services/order_detail_service'
 
 module Lalamove
   def self.configuration

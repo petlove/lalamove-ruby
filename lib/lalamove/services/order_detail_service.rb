@@ -2,17 +2,17 @@
 
 module Lalamove
   module Services
-    class OrderCancelService < QuotationService
+    class OrderDetailService < QuotationService
       private
 
       def process
-        RequestService.perform!(action: :put, payload: nil, path: path)
+        RequestService.perform!(action: :get, payload: nil, path: path)
       end
 
       def payloadable; end
 
       def path
-        "/v2/orders/#{params[:id]}/cancel"
+        "/v2/orders/#{params[:id]}"
       end
     end
   end
