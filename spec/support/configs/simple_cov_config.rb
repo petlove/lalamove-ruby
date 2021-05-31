@@ -4,7 +4,7 @@ require 'simplecov_json_formatter'
 
 module SimpleCovConfig
   def self.configure
-    SimpleCov.formatter = SimpleCov::Formatter::JSONFormatter if ENV['CC_TEST_REPORTER_ID']
+    SimpleCov.formatter = SimpleCov::Formatter::JSONFormatter
 
     SimpleCov.minimum_coverage 90
     SimpleCov.start do
