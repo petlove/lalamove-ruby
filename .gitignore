@@ -15,3 +15,5 @@ tags
 .env
 .env.*
 !.env.sample
+
+cc-test-reporter
