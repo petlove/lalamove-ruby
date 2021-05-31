@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative 'lib/lalamove/ruby/version'
+require_relative 'lib/lalamove/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'lalamove-ruby'
-  spec.version       = Lalamove::Ruby::VERSION
+  spec.version       = Lalamove::VERSION
   spec.authors       = ['ferreiraandy']
   spec.email         = ['andyferreira92@gmail.com']
 
