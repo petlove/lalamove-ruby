@@ -1,11 +1,6 @@
 # frozen_string_literal: true
 
 require 'bundler/setup'
-require 'simplecov'
-require 'support/configs/simple_cov_config'
-
-SimpleCovConfig.configure
-
 require 'lalamove'
 require 'dotenv'
 require 'pry'
@@ -16,6 +11,7 @@ Dir[File.expand_path(File.join(File.dirname(__FILE__), 'support', '**', '*.rb'))
   require f
 end
 
+SimpleCovConfig.configure
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
   config.example_status_persistence_file_path = '.rspec_status'
