@@ -6,11 +6,11 @@ module Lalamove
       private
 
       def process
-        Lalamove::Services::OrderCreatorService.perform!(payload)
+        Lalamove::Services::OrderCreatorService.perform!(payload_with_fee)
       end
 
-      def payload
-        super.merge(
+      def payload_with_fee
+        payload.merge(
           quotedTotalFee: {
             amount: orders.sum { |order| order[:cost].to_f }.to_s,
             currency: Lalamove.configuration.currency
