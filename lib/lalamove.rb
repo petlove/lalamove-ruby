@@ -2,7 +2,7 @@
 
 # frozen_string_literal: true
 
-require 'lalamove/ruby/version'
+require 'lalamove/version'
 
 require 'lalamove/configuration'
 require 'lalamove/client'

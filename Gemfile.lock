@@ -8,7 +8,7 @@ GIT
 PATH
   remote: .
   specs:
-    lalamove-ruby (0.1.0)
+    lalamove-ruby (0.1.1)
       activesupport (>= 5, < 7)
       awesome_print
       faraday (~> 1.4.1)
