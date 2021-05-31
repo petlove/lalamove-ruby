@@ -8,10 +8,10 @@ GIT
 PATH
   remote: .
   specs:
-    lalamove-ruby (0.1.1)
+    lalamove (0.1.1)
       activesupport (>= 5, < 7)
       awesome_print
-      faraday (~> 1.4.1)
+      faraday (~> 1.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -55,19 +55,9 @@ GEM
       dry-core (~> 0.5, >= 0.5)
       dry-inflector (~> 0.1, >= 0.1.2)
       dry-logic (~> 1.0, >= 1.0.2)
-    faraday (1.4.2)
-      faraday-em_http (~> 1.0)
-      faraday-em_synchrony (~> 1.0)
-      faraday-excon (~> 1.1)
-      faraday-net_http (~> 1.0)
-      faraday-net_http_persistent (~> 1.1)
+    faraday (1.1.0)
       multipart-post (>= 1.2, < 3)
-      ruby2_keywords (>= 0.0.4)
-    faraday-em_http (1.0.0)
-    faraday-em_synchrony (1.0.0)
-    faraday-excon (1.1.0)
-    faraday-net_http (1.0.1)
-    faraday-net_http_persistent (1.1.0)
+      ruby2_keywords
     hashdiff (1.0.1)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
@@ -141,7 +131,7 @@ DEPENDENCIES
   dotenv
   dry-struct (~> 1.4.0)
   dry-types (~> 1.5.1)
-  lalamove-ruby!
+  lalamove!
   pry
   rake (~> 13.0)
   rspec (~> 3.9)
