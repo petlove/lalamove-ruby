@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 require 'bundler/setup'
-require 'lalamove'
 require 'simplecov'
+require 'lalamove'
 require 'dotenv'
 require 'pry'
 
