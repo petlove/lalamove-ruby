@@ -54,8 +54,17 @@ RSpec.describe Lalamove::Services::RequestService do
 
     context 'when status code different from 201' do
       let(:body)    { '{"foo": "bar"}' }
-      let(:result)  { double(body: body, status: 422, success?: false, reason_phrase: { foo: 'bar' }) }
       let(:request) { double(post: result) }
+
+      let(:result) do
+        double(
+          body: body,
+          status: 422,
+          success?: false,
+          reason_phrase: { foo: 'bar' },
+          response_body: { bar: 'Baz' }.to_json
+        )
+      end
 
       before do
         allow_any_instance_of(described_class).to receive(:connection).and_return(request)
