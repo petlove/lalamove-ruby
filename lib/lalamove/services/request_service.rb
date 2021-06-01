@@ -54,7 +54,7 @@ module Lalamove
       end
 
       def parser(attr)
-        return if attr&.empty?
+        return {} if attr&.empty?
 
         JSON.parse(attr, symbolize_names: true)
       end
@@ -63,7 +63,7 @@ module Lalamove
         response(
           errors: result.reason_phrase,
           status: result.status,
-          message: parser(result.body)
+          message: parser(result.body)[:message]
         )
       end
     end
