@@ -24,7 +24,6 @@ RSpec.describe Lalamove::Resources::PlaceOrder do
         let(:orders) { [payload, payload] }
 
         it 'returns a valid response' do
-          # expect(Lalamove::Services::QuotationService).to receive(:perform!).once.and_call_original
           expect(Lalamove::Services::QuotationService).to receive(:perform!).once.and_return(response)
           expect(Lalamove::Services::OrderCreatorService).to receive(:perform!).once.and_call_original
 

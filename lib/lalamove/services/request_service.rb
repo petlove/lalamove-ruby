@@ -11,9 +11,9 @@ module Lalamove
       def perform
         result = connection.send(params[:action], params[:path], payload)
 
-        return response(errors: result.reason_phrase, status: result.status) unless result.success?
+        return failure(result) unless result.success?
 
-        response(data: JSON.parse(result.body, symbolize_names: true), status: result.status)
+        response(data: parser(result.body), status: result.status)
       end
 
       private
@@ -51,6 +51,20 @@ module Lalamove
           'X-LLM-Country': 'BR_SAO',
           'X-Request-ID': timestamp.to_s
         }
+      end
+
+      def parser(attr)
+        return if attr&.empty?
+
+        JSON.parse(attr, symbolize_names: true)
+      end
+
+      def failure(result)
+        response(
+          errors: result.reason_phrase,
+          status: result.status,
+          message: parser(result.body)
+        )
       end
     end
   end

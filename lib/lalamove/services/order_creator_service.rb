@@ -6,7 +6,9 @@ module Lalamove
       private
 
       def process
-        RequestService.perform!(action: :post, payload: payloadable.to_h, path: '/v2/orders')
+        result = RequestService.perform!(action: :post, payload: payloadable.to_h, path: '/v2/orders')
+        result.data[:amount] = payloadable.quotedTotalFee.amount if result.valid?
+        result
       end
 
       def payloadable
