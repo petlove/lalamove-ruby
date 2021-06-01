@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox-rest.lalamove.com/v2/orders/1004514830733807616/drivers/67079
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - hmac TOKEN:1622557632467:f124900d750bb05b612062de05e07fbbdac45ecf951c516052eb9382da5df5c8
+      X-Llm-Country:
+      - BR_SAO
+      X-Request-Id:
+      - '1622557632467'
+      User-Agent:
+      - Faraday v1.1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.15.8
+      Date:
+      - Tue, 01 Jun 2021 14:27:15 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '185'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Llm-Session-Id:
+      - '1622557632467'
+      X-Ratelimit-Limit:
+      - '300'
+      X-Ratelimit-Remaining:
+      - '299'
+      X-Ratelimit-Reset:
+      - '1622557693'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"name":"API Driver","phone":"1193636363633","plateNumber":"H3LL0","photo":"https://s3-ap-southeast-1.amazonaws.com/lalamove-user-content-sandbox/a99b253f-0aa7-43e1-b65e-4a6887f6c084"}
+
+        '
+  recorded_at: Tue, 01 Jun 2021 14:27:14 GMT
+recorded_with: VCR 6.0.0
