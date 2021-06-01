@@ -31,6 +31,7 @@ require 'lalamove/resources/place_order'
 require 'lalamove/resources/order_cancel'
 require 'lalamove/resources/order_detail'
 require 'lalamove/resources/driver_details'
+require 'lalamove/resources/driver_location'
 
 require 'lalamove/services/request_service'
 require 'lalamove/services/quotation_service'
@@ -38,6 +39,7 @@ require 'lalamove/services/order_creator_service'
 require 'lalamove/services/order_cancel_service'
 require 'lalamove/services/order_detail_service'
 require 'lalamove/services/driver_details_service'
+require 'lalamove/services/driver_location_service'
 
 module Lalamove
   def self.configuration
