@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox-rest.lalamove.com/v2/orders/1004514830733807616/drivers/67079/location
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - hmac TOKEN:1622559964406:d2d1fa5da0a27e3da4367c4ff621628934b9de782dcd8a7ca033c5dfd9e599d3
+      X-Llm-Country:
+      - BR_SAO
+      X-Request-Id:
+      - '1622559964406'
+      User-Agent:
+      - Faraday v1.1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.15.8
+      Date:
+      - Tue, 01 Jun 2021 15:06:07 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '92'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Llm-Session-Id:
+      - '1622559964406'
+      X-Ratelimit-Limit:
+      - '300'
+      X-Ratelimit-Remaining:
+      - '299'
+      X-Ratelimit-Reset:
+      - '1622560026'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"location":{"lat":"-23.5082788","lng":"-46.653224"},"updatedAt":"2020-11-20T04:00:57.00Z"}
+
+        '
+  recorded_at: Tue, 01 Jun 2021 15:06:07 GMT
+recorded_with: VCR 6.0.0
