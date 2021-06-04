@@ -28,4 +28,10 @@ RSpec.describe Lalamove::Client do
       expect(subject.order_cancel.new({})).to be_an(Lalamove::Resources::OrderCancel)
     end
   end
+
+  describe '#order_detail' do
+    it 'returns class call correctly' do
+      expect(subject.order_detail.new({})).to be_an(Lalamove::Resources::OrderDetail)
+    end
+  end
 end

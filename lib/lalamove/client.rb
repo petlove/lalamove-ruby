@@ -18,6 +18,10 @@ module Lalamove
       def order_cancel
         Lalamove::Resources::OrderCancel
       end
+
+      def order_detail
+        Lalamove::Resources::OrderDetail
+      end
     end
   end
 end
