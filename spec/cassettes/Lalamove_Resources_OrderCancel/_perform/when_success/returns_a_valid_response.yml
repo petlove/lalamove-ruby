@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: https://sandbox-rest.lalamove.com/v2/orders/1004199200419745792/cancel
+    uri: https://rest.sandbox.lalamove.com/v2/orders/1004199200419745792/cancel
     body:
       encoding: UTF-8
       string: "{}"

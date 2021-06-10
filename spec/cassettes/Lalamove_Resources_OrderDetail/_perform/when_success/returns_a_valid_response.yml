@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sandbox-rest.lalamove.com/v2/orders/1004199200419745792
+    uri: https://rest.sandbox.lalamove.com/v2/orders/1004199200419745792
     body:
       encoding: US-ASCII
       string: ''
