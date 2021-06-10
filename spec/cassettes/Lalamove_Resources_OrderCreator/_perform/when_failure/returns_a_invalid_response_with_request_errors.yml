@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://sandbox-rest.lalamove.com/v2/orders
+    uri: https://rest.sandbox.lalamove.com/v2/orders
     body:
       encoding: UTF-8
       string: '{"serviceType":"LALAGO","stops":[{"addresses":{"pt_BR":{"displayString":"","country":"BR_SAO"}}},{"addresses":{"pt_BR":{"displayString":",

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sandbox-rest.lalamove.com/v2/orders/1004514830733807616/drivers/67079/location
+    uri: https://rest.sandbox.lalamove.com/v2/orders/1004514830733807616/drivers/67079/location
     body:
       encoding: US-ASCII
       string: ''

@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe Lalamove::Services::RequestService do
-  let(:url)      { 'https://sandbox-rest.lalamove.com' }
+  let(:url)      { 'https://rest.sandbox.lalamove.com' }
   let(:token)    { '' }
   let(:payload)  { { foo: 'bar' } }
   let(:request)  { double(:request) }
