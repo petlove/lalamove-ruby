@@ -2,7 +2,7 @@
 
 module Lalamove
   class Configuration
-    attr_accessor :production, :secret, :token, :currency, :country, :city
+    attr_accessor :production, :secret, :token, :currency, :country, :market
 
     PRODUCTION = 'https://rest.lalamove.com'
     SANDBOX    = 'https://rest.sandbox.lalamove.com'
@@ -13,7 +13,7 @@ module Lalamove
       @token = ''
       @currency = ''
       @country = ''
-      @city = ''
+      @market = ''
     end
 
     def host

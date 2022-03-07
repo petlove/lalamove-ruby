@@ -21,7 +21,7 @@ RSpec.describe Lalamove do
         lalamove.token = 'foo_bar_baz'
         lalamove.country = 'pt_BR'
         lalamove.currency = 'BRL'
-        lalamove.city = 'BR_SAO'
+        lalamove.market = 'BR'
       end
     end
 
@@ -31,7 +31,7 @@ RSpec.describe Lalamove do
       expect(Lalamove.configuration.token).to eql('foo_bar_baz')
       expect(Lalamove.configuration.country).to eql('pt_BR')
       expect(Lalamove.configuration.currency).to eql('BRL')
-      expect(Lalamove.configuration.city).to eql('BR_SAO')
+      expect(Lalamove.configuration.market).to eql('BR')
     end
 
     it 'uses a singleton object for the configuration values' do

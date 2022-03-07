@@ -48,8 +48,8 @@ module Lalamove
           'Content-Type': 'application/json',
           'Accept': 'application/json',
           'Authorization': "hmac #{Lalamove.configuration.token}:#{timestamp}:#{signature}",
-          'X-LLM-Country': Lalamove.configuration.city,
-          'X-Request-ID': timestamp.to_s
+          'X-Request-ID': timestamp.to_s,
+          'MARKET': Lalamove.configuration.market
         }
       end
 

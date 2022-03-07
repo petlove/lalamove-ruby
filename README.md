@@ -41,7 +41,7 @@ It will generate an simple Lalamove cliente configuraion. Howevere if you prefer
       config.secret = 'Your own Lalamove secret key'
       config.currency = 'BRL'
       config.country = 'pt_BR'
-      config.city = 'BR_SAO'
+      config.market = 'BR'
     end
 ```
 
