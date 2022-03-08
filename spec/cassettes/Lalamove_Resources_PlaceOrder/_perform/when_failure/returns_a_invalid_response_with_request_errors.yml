@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://rest.sandbox.lalamove.com/v3/quotations
+    body:
+      encoding: UTF-8
+      string: '{"data":{"language":"PT_BR","serviceType":"LALAGO","stops":[{"address":""},{"address":",
+        ,  - ,  - , , Brazil"}],"specialRequests":[]}}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - hmac TOKEN:1646767462571:8c84c4899a5c6a7143c97d16ba276b9191dc58f125f917dd3a71c47c7894c994
+      X-Request-Id:
+      - '1646767462571'
+      Market:
+      - BR
+      User-Agent:
+      - Faraday v1.1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Date:
+      - Tue, 08 Mar 2022 19:24:23 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '44'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Api-Version:
+      - 3.0.0
+      Ratelimit-Limit:
+      - '50'
+      Ratelimit-Remaining:
+      - '49'
+      Ratelimit-Reset:
+      - '1646767465'
+      Request-Id:
+      - 2804dd1f-8fc2-4c14-9d6c-180cc418ece0
+      Vary:
+      - Origin
+      Access-Control-Expose-Headers:
+      - x-llm-location,cache-control,authorization,content-type
+      X-Kong-Upstream-Latency:
+      - '2'
+      X-Kong-Proxy-Latency:
+      - '0'
+      Via:
+      - kong/2.1.3
+      Server:
+      - WAF-Gateway/2.6
+    body:
+      encoding: UTF-8
+      string: '{"errors":[{"id":"ERR_INCORRECT_ADDRESS"}]}
+
+        '
+  recorded_at: Tue, 08 Mar 2022 19:24:23 GMT
+recorded_with: VCR 6.0.0

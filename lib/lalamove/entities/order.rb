@@ -2,11 +2,12 @@
 
 module Lalamove
   module Entities
-    class Order < Quotation
-      attribute :quotedTotalFee, QuotedTotalFee
-      attribute :sms, Types::Bool.meta(omittable: true)
-      attribute :pod, Types::Bool
-      attribute :fleetOption, Types::String
+    class Order < Base
+      attribute :quotationId, Types::String
+      attribute :sender, OrderSender
+      attribute :recipients, Types::Strict::Array.of(OrderSender)
+      attribute :isRecipientSMSEnabled, Types::Bool.meta(omittable: true)
+      attribute :isPODEnabled, Types::Bool
     end
   end
 end

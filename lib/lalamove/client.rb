@@ -7,10 +7,6 @@ module Lalamove
         Lalamove::Resources::Quotation
       end
 
-      def order_creator
-        Lalamove::Resources::OrderCreator
-      end
-
       def place_order
         Lalamove::Resources::PlaceOrder
       end
