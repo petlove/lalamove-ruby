@@ -23,7 +23,7 @@ module Lalamove
       def payloadable; end
 
       def path
-        "/v2/orders/#{order_id}/drivers/#{driver_id}"
+        "/v3/orders/#{order_id}/drivers/#{driver_id}"
       end
     end
   end

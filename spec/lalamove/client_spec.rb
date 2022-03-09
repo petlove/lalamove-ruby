@@ -5,15 +5,15 @@ require 'spec_helper'
 RSpec.describe Lalamove::Client do
   subject { described_class }
 
-  describe '#quotation' do
+  describe '#driver_detail' do
     it 'returns class call correctly' do
-      expect(subject.quotation.new({})).to be_an(Lalamove::Resources::Quotation)
+      expect(subject.driver_detail.new({}, {})).to be_an(Lalamove::Resources::DriverDetails)
     end
   end
 
-  describe '#order_creator' do
+  describe '#quotation' do
     it 'returns class call correctly' do
-      expect(subject.order_creator.new({})).to be_an(Lalamove::Resources::OrderCreator)
+      expect(subject.quotation.new({})).to be_an(Lalamove::Resources::Quotation)
     end
   end
 

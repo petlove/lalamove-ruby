@@ -5,43 +5,20 @@ require 'spec_helper'
 RSpec.describe Lalamove::Entities::Quotation do
   let(:attributes) do
     {
-      scheduleAt: '2020-09-01T14:30:00.00Z',
-      serviceType: 'MOTORCYCLE',
+      language: "PT_BR",
+      serviceType: "LALAGO",
       stops: [
-        {
-          location: {
-            lat: '13.740167',
-            lng: '100.535237'
-          },
-          addresses: {
-            pt_BR: {
-              displayString: 'Rua Dom Salomão Ferraz, 123',
-              country: 'TH'
-            }
-          }
-        }
+        {"address": "Av. Dr. Cardoso de Melo, 1155 - Vila Olimpia, São Paulo - SP, 04548-004, Brazil"},
+        {"address": "Rua Dom salomão ferraz, 1, 1 - Vila Andrade, São Paulo - SP, 05729140, Brazil"}
       ],
-      deliveries: [
-        {
-          toStop: 1,
-          toContact: {
-            name: 'Person',
-            phone: '5511999999999'
-          },
-          remarks: 'ORDER#94\r\n1. Tshirt จำนวน 1\r\n2. Hoodie จำนวน 1\r\n'
-        }
-      ],
-      requesterContact: {
-        name: 'Person',
-        phone: '5511999999999'
-      },
-      specialRequests: ['COD']
+      specialRequests: [],
+      scheduleAt: ''
     }
   end
 
   subject { described_class.new(attributes) }
 
   it_behaves_like 'entity_attributes', %i[
-    scheduleAt serviceType stops deliveries requesterContact specialRequests
+    language serviceType stops scheduleAt specialRequests
   ]
 end

@@ -266,6 +266,14 @@ Lalamove::Client.order_cancel.perform!('123456789')
 Lalamove::Client.order_detail.perform!('123456789')
 ```
 
+##### Driver details
+
+```ruby
+order_id = '123'
+driver_id = '321'
+Lalamove::Client.driver_detail.perform!(order_id, driver_id)
+```
+
 ## Development
 
 It is possible make your own quotation tests by adding your own keys in a `.env` file an example is available as `.env.sample`.

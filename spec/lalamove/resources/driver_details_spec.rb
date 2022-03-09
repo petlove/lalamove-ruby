@@ -7,8 +7,8 @@ RSpec.describe Lalamove::Resources::DriverDetails do
     subject { described_class.perform!(order_id, driver_id) }
 
     context 'when success' do
-      let(:order_id) { '1004514830733807616' }
-      let(:driver_id) { '67079' }
+      let(:order_id) { '190170109290' }
+      let(:driver_id) { '80036' }
 
       it 'returns a valid response' do
         is_expected.to be_valid

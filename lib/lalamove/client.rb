@@ -3,6 +3,10 @@
 module Lalamove
   class Client
     class << self
+      def driver_detail
+        Lalamove::Resources::DriverDetails
+      end
+
       def quotation
         Lalamove::Resources::Quotation
       end

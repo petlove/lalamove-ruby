@@ -15,7 +15,7 @@ RSpec.describe Lalamove::Services::RequestService do
       'Content-Type': 'application/json',
       Accept: 'application/json',
       Authorization: anything,
-      'X-LLM-Country': 'BR_SAO',
+      'MARKET': 'BR',
       'X-Request-ID': anything
     }
   end

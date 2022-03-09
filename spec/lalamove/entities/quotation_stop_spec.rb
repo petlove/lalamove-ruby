@@ -9,16 +9,11 @@ RSpec.describe Lalamove::Entities::QuotationStop do
         lat: '13.740167',
         lng: '100.535237'
       },
-      addresses: {
-        pt_BR: {
-          displayString: 'Rua Dom Salomão Ferraz, 123',
-          country: 'TH'
-        }
-      }
+      address: 'Rua Dom Salomão Ferraz, 123'
     }
   end
 
   subject { described_class.new(attributes) }
 
-  it_behaves_like 'entity_attributes', %i[location addresses]
+  it_behaves_like 'entity_attributes', %i[location address]
 end

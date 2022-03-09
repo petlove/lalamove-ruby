@@ -14,9 +14,9 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - hmac TOKEN:1646767454826:e697049bb08441e637707ce525df377f267f8ff253fcc4a755ddc34ca8830c96
+      - hmac TOKEN:1646836357690:18ac1c5b4b551dd62e126a2522c6b9e4da8b326e52d8b8248f67579ce3b2de2b
       X-Request-Id:
-      - '1646767454826'
+      - '1646836357690'
       Market:
       - BR
       User-Agent:
@@ -29,7 +29,7 @@ http_interactions:
       message: Created
     headers:
       Date:
-      - Tue, 08 Mar 2022 19:24:16 GMT
+      - Wed, 09 Mar 2022 14:32:41 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -45,36 +45,34 @@ http_interactions:
       Ratelimit-Remaining:
       - '49'
       Ratelimit-Reset:
-      - '1646767457'
+      - '1646836361'
       Request-Id:
-      - 7ec7cdca-c36e-4570-a441-334685be400f
+      - 6770f885-da03-42df-92e8-5d38a6b19a24
       Vary:
       - Origin
       Access-Control-Expose-Headers:
       - x-llm-location,cache-control,authorization,content-type
       X-Kong-Upstream-Latency:
-      - '480'
+      - '1083'
       X-Kong-Proxy-Latency:
       - '0'
-      Via:
-      - kong/2.1.3
       Server:
       - WAF-Gateway/2.6
     body:
       encoding: UTF-8
-      string: '{"data":{"quotationId":"1501277639799799833","scheduleAt":"2022-03-08T19:24:16.00Z","expiresAt":"2022-03-08T19:29:16.00Z","serviceType":"LALAGO","language":"PT_BR","stops":[{"stopId":"1501277640500248646","coordinates":{"lat":"-23.5986957","lng":"-46.6850130"},"address":"Av.
-        Dr. Cardoso de Melo, 1155 - Vila Olimpia, São Paulo - SP, 04548-004, Brazil"},{"stopId":"1501277640500248647","coordinates":{"lat":"-23.6365087","lng":"-46.7389078"},"address":"Rua
+      string: '{"data":{"quotationId":"1501566646089744475","scheduleAt":"2022-03-09T14:32:40.00Z","expiresAt":"2022-03-09T14:37:41.00Z","serviceType":"LALAGO","language":"PT_BR","stops":[{"stopId":"1501566647029268487","coordinates":{"lat":"-23.5986957","lng":"-46.6850130"},"address":"Av.
+        Dr. Cardoso de Melo, 1155 - Vila Olimpia, São Paulo - SP, 04548-004, Brazil"},{"stopId":"1501566647029268488","coordinates":{"lat":"-23.6365087","lng":"-46.7389078"},"address":"Rua
         Dom salomão ferraz, 1, 1 - Vila Andrade, São Paulo - SP, 05729140, Brazil"}],"isRouteOptimized":false,"priceBreakdown":{"base":"9.50","extraMileage":"6.78","vat":"1.63","totalBeforeOptimization":"17.91","totalExcludePriorityFee":"17.91","total":"17.91","currency":"BRL"}}}
 
         '
-  recorded_at: Tue, 08 Mar 2022 19:24:16 GMT
+  recorded_at: Wed, 09 Mar 2022 14:32:41 GMT
 - request:
     method: post
     uri: https://rest.sandbox.lalamove.com/v3/orders
     body:
       encoding: UTF-8
-      string: '{"data":{"quotationId":"1501277639799799833","sender":{"stopId":"1501277640500248646","name":"São
-        Paulo","phone":"+551133350200"},"recipients":[{"stopId":"1501277640500248647","name":"Anderson
+      string: '{"data":{"quotationId":"1501566646089744475","sender":{"stopId":"1501566647029268487","name":"São
+        Paulo","phone":"+551133350200"},"recipients":[{"stopId":"1501566647029268488","name":"Anderson
         Ferreira","phone":"+5511970009090"}],"isRecipientSMSEnabled":false,"isPODEnabled":true}}'
     headers:
       Content-Type:
@@ -82,9 +80,9 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - hmac TOKEN:1646767456681:dbaa2781f8f5e95aacdebbe1b5d1cccd86df642870b7d2c19a280ecf771efae3
+      - hmac TOKEN:1646836361221:2da8b5de04906023290efd2dcf53bbbc864b95375da2b75d36d4e488d1639c34
       X-Request-Id:
-      - '1646767456681'
+      - '1646836361221'
       Market:
       - BR
       User-Agent:
@@ -97,7 +95,7 @@ http_interactions:
       message: Created
     headers:
       Date:
-      - Tue, 08 Mar 2022 19:24:18 GMT
+      - Wed, 09 Mar 2022 14:32:44 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -113,27 +111,27 @@ http_interactions:
       Ratelimit-Remaining:
       - '49'
       Ratelimit-Reset:
-      - '1646767459'
+      - '1646836364'
       Request-Id:
-      - '087e11fb-3e5e-4aa3-a54d-3c0137b798cb'
+      - e7753b98-3be6-4c0d-a19e-7223b9a3f7cd
       Vary:
       - Origin
       Access-Control-Expose-Headers:
       - x-llm-location,cache-control,authorization,content-type
       X-Kong-Upstream-Latency:
-      - '738'
+      - '687'
       X-Kong-Proxy-Latency:
       - '0'
       Server:
       - WAF-Gateway/2.6
     body:
       encoding: UTF-8
-      string: '{"data":{"orderId":"106760905229","quotationId":"1501277639799799833","priceBreakdown":{"base":"9.50","extraMileage":"6.78","vat":"1.63","totalExcludePriorityFee":"17.91","total":"17.91","currency":"BRL"},"driverId":"","shareLink":"https://share.sandbox.lalamove.com?BR100220309032418253210010021914596\u0026lang=pt_BR\u0026sign=5ad1cdfcb12b35806f1ad81b996d3cfc\u0026source=api_wrapper","status":"ASSIGNING_DRIVER","distance":{"value":"9822","unit":"m"},"stops":[{"coordinates":{"lat":"-23.5986957","lng":"-46.6850130"},"address":"Av.
+      string: '{"data":{"orderId":"199170108290","quotationId":"1501566646089744475","priceBreakdown":{"base":"9.50","extraMileage":"6.78","vat":"1.63","totalExcludePriorityFee":"17.91","total":"17.91","currency":"BRL"},"driverId":"","shareLink":"https://share.sandbox.lalamove.com?BR100220309223243988210010078813349\u0026lang=pt_BR\u0026sign=7ec5819d5d043baa03d75f3e4bdea95f\u0026source=api_wrapper","status":"ASSIGNING_DRIVER","distance":{"value":"9822","unit":"m"},"stops":[{"coordinates":{"lat":"-23.5986957","lng":"-46.6850130"},"address":"Av.
         Dr. Cardoso de Melo, 1155 - Vila Olimpia, São Paulo - SP, 04548-004, Brazil","name":"São
         Paulo","phone":" 551133350200"},{"coordinates":{"lat":"-23.6365087","lng":"-46.7389078"},"address":"Rua
         Dom salomão ferraz, 1, 1 - Vila Andrade, São Paulo - SP, 05729140, Brazil","name":"Anderson
         Ferreira","phone":"11970009090","POD":{"status":"PENDING"}}]}}
 
         '
-  recorded_at: Tue, 08 Mar 2022 19:24:18 GMT
+  recorded_at: Wed, 09 Mar 2022 14:32:44 GMT
 recorded_with: VCR 6.0.0
