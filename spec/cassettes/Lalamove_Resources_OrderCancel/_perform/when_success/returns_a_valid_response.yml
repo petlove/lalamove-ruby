@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: delete
-    uri: https://rest.sandbox.lalamove.com/v3/orders/107760905229
+    uri: https://rest.sandbox.lalamove.com/v3/orders/198170102280
     body:
       encoding: US-ASCII
       string: ''
@@ -12,9 +12,9 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - hmac TOKEN:1646767990274:60db61b58efa9459eb01cec8923ce0079b02bb4e55eb84b3cc25dd2952c442b6
+      - hmac TOKEN:1646833699071:018f3c6e30bd2f7efe5c3cf199f859ee5168ecf54ae2d0389a1c9a142224d891
       X-Request-Id:
-      - '1646767990274'
+      - '1646833699071'
       Market:
       - BR
       User-Agent:
@@ -27,7 +27,7 @@ http_interactions:
       message: No Content
     headers:
       Date:
-      - Tue, 08 Mar 2022 19:33:12 GMT
+      - Wed, 09 Mar 2022 13:48:21 GMT
       Content-Type:
       - application/json; charset=utf-8
       Connection:
@@ -41,15 +41,15 @@ http_interactions:
       Ratelimit-Remaining:
       - '49'
       Ratelimit-Reset:
-      - '1646767992'
+      - '1646833701'
       Request-Id:
-      - e8785367-19d4-4483-a9fa-22f6878857bd
+      - 9fb639d7-bc54-4077-8cbc-06485f0ac1a3
       Vary:
       - Origin
       Access-Control-Expose-Headers:
       - x-llm-location,cache-control,authorization,content-type
       X-Kong-Upstream-Latency:
-      - '916'
+      - '821'
       X-Kong-Proxy-Latency:
       - '0'
       Server:
@@ -57,5 +57,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: ''
-  recorded_at: Tue, 08 Mar 2022 19:33:12 GMT
+  recorded_at: Wed, 09 Mar 2022 13:48:21 GMT
 recorded_with: VCR 6.0.0

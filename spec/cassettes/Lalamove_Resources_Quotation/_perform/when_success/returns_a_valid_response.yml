@@ -14,9 +14,9 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - hmac TOKEN:1646746992820:5acc3179c6c15faa7fbd7ea2340196965823a191943347aa61e3aad6cafbdf69
+      - hmac TOKEN:1646827703279:9c53c05ae52a01eb08c503a0e24bea1850f94d6a6c22a589633213784ef0ac99
       X-Request-Id:
-      - '1646746992820'
+      - '1646827703279'
       Market:
       - BR
       User-Agent:
@@ -29,7 +29,7 @@ http_interactions:
       message: Created
     headers:
       Date:
-      - Tue, 08 Mar 2022 13:43:15 GMT
+      - Wed, 09 Mar 2022 12:08:25 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -45,95 +45,27 @@ http_interactions:
       Ratelimit-Remaining:
       - '49'
       Ratelimit-Reset:
-      - '1646746995'
+      - '1646827705'
       Request-Id:
-      - 2e839e7e-33a7-4d29-9505-b8a580eaaf5b
+      - f477a874-48e4-49c2-b476-ce999aa422a3
       Vary:
       - Origin
       Access-Control-Expose-Headers:
       - x-llm-location,cache-control,authorization,content-type
       X-Kong-Upstream-Latency:
-      - '1368'
+      - '1161'
       X-Kong-Proxy-Latency:
-      - '1'
+      - '0'
       Via:
       - kong/2.1.3
       Server:
       - WAF-Gateway/2.6
     body:
       encoding: UTF-8
-      string: '{"data":{"quotationId":"1501191819151605797","scheduleAt":"2022-03-08T13:43:14.00Z","expiresAt":"2022-03-08T13:48:15.00Z","serviceType":"LALAGO","language":"PT_BR","stops":[{"stopId":"1501191820988710970","coordinates":{"lat":"-23.5986957","lng":"-46.6850130"},"address":"Av.
-        Dr. Cardoso de Melo, 1155 - Vila Olimpia, São Paulo - SP, 04548-004, Brazil"},{"stopId":"1501191820988710971","coordinates":{"lat":"-23.6365087","lng":"-46.7389078"},"address":"Rua
+      string: '{"data":{"quotationId":"1501530342564102159","scheduleAt":"2022-03-09T12:08:24.00Z","expiresAt":"2022-03-09T12:13:25.00Z","serviceType":"LALAGO","language":"PT_BR","stops":[{"stopId":"1501530343621066796","coordinates":{"lat":"-23.5986957","lng":"-46.6850130"},"address":"Av.
+        Dr. Cardoso de Melo, 1155 - Vila Olimpia, São Paulo - SP, 04548-004, Brazil"},{"stopId":"1501530343621066797","coordinates":{"lat":"-23.6365087","lng":"-46.7389078"},"address":"Rua
         Dom salomão ferraz, 1, 1 - Vila Andrade, São Paulo - SP, 05729140, Brazil"}],"isRouteOptimized":false,"priceBreakdown":{"base":"9.50","extraMileage":"6.78","vat":"1.63","totalBeforeOptimization":"17.91","totalExcludePriorityFee":"17.91","total":"17.91","currency":"BRL"}}}
 
         '
-  recorded_at: Tue, 08 Mar 2022 13:43:15 GMT
-- request:
-    method: post
-    uri: https://rest.sandbox.lalamove.com/v3/quotations
-    body:
-      encoding: UTF-8
-      string: '{"data":{"language":"PT_BR","serviceType":"LALAGO","stops":[{"address":"Av.
-        Dr. Cardoso de Melo, 1155 - Vila Olimpia, São Paulo - SP, 04548-004, Brazil"},{"address":"Rua
-        Dom salomão ferraz, 1, 1 - Vila Andrade, São Paulo - SP, 05729140, Brazil"}],"specialRequests":[]}}'
-    headers:
-      Content-Type:
-      - application/json
-      Accept:
-      - application/json
-      Authorization:
-      - hmac TOKEN:1646746998943:bb508abfc63ae5fd8a709cea3a554b1cd318ab2f88e6a20505f0dd5ea5654613
-      X-Request-Id:
-      - '1646746998943'
-      Market:
-      - BR
-      User-Agent:
-      - Faraday v1.1.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 201
-      message: Created
-    headers:
-      Date:
-      - Tue, 08 Mar 2022 13:43:21 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '733'
-      Connection:
-      - keep-alive
-      Access-Control-Allow-Origin:
-      - "*"
-      Api-Version:
-      - 3.0.0
-      Ratelimit-Limit:
-      - '50'
-      Ratelimit-Remaining:
-      - '49'
-      Ratelimit-Reset:
-      - '1646747001'
-      Request-Id:
-      - fd54cf41-1934-48da-b85e-7c24b070be6b
-      Vary:
-      - Origin
-      Access-Control-Expose-Headers:
-      - x-llm-location,cache-control,authorization,content-type
-      X-Kong-Upstream-Latency:
-      - '744'
-      X-Kong-Proxy-Latency:
-      - '1'
-      Via:
-      - kong/2.1.3
-      Server:
-      - WAF-Gateway/2.6
-    body:
-      encoding: UTF-8
-      string: '{"data":{"quotationId":"1501191843281436724","scheduleAt":"2022-03-08T13:43:20.00Z","expiresAt":"2022-03-08T13:48:21.00Z","serviceType":"LALAGO","language":"PT_BR","stops":[{"stopId":"1501191843956719708","coordinates":{"lat":"-23.5986957","lng":"-46.6850130"},"address":"Av.
-        Dr. Cardoso de Melo, 1155 - Vila Olimpia, São Paulo - SP, 04548-004, Brazil"},{"stopId":"1501191843956719709","coordinates":{"lat":"-23.6365087","lng":"-46.7389078"},"address":"Rua
-        Dom salomão ferraz, 1, 1 - Vila Andrade, São Paulo - SP, 05729140, Brazil"}],"isRouteOptimized":false,"priceBreakdown":{"base":"9.50","extraMileage":"6.78","vat":"1.63","totalBeforeOptimization":"17.91","totalExcludePriorityFee":"17.91","total":"17.91","currency":"BRL"}}}
-
-        '
-  recorded_at: Tue, 08 Mar 2022 13:43:21 GMT
+  recorded_at: Wed, 09 Mar 2022 12:08:25 GMT
 recorded_with: VCR 6.0.0

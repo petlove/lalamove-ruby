@@ -7,7 +7,7 @@ RSpec.describe Lalamove::Resources::OrderCancel do
     subject { described_class.perform!(id) }
 
     context 'when success' do
-      let(:id) { '107760905229' }
+      let(:id) { '198170102280' }
 
       it 'returns a valid response' do
         is_expected.to be_valid

@@ -13,9 +13,9 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - hmac TOKEN:1646747005888:83a341c37d5f14afa2489a442a3112aa537c92bf8bcf8a600e3718597685eacd
+      - hmac TOKEN:1646827705886:a739f0baeb0aeeb29ab4672d6000fe40551f622c0d26db2798ffd0d9418ce683
       X-Request-Id:
-      - '1646747005888'
+      - '1646827705886'
       Market:
       - BR
       User-Agent:
@@ -28,7 +28,7 @@ http_interactions:
       message: Unprocessable Entity
     headers:
       Date:
-      - Tue, 08 Mar 2022 13:43:27 GMT
+      - Wed, 09 Mar 2022 12:08:27 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -44,9 +44,9 @@ http_interactions:
       Ratelimit-Remaining:
       - '49'
       Ratelimit-Reset:
-      - '1646747008'
+      - '1646827708'
       Request-Id:
-      - 81288343-0db3-466f-98bf-4e26fbf7aabd
+      - bb5be5fa-9777-42de-9023-3aca9796e634
       Vary:
       - Origin
       Access-Control-Expose-Headers:
@@ -55,8 +55,6 @@ http_interactions:
       - '1'
       X-Kong-Proxy-Latency:
       - '0'
-      Via:
-      - kong/2.1.3
       Server:
       - WAF-Gateway/2.6
     body:
@@ -64,5 +62,5 @@ http_interactions:
       string: '{"errors":[{"id":"ERR_INCORRECT_ADDRESS"}]}
 
         '
-  recorded_at: Tue, 08 Mar 2022 13:43:27 GMT
+  recorded_at: Wed, 09 Mar 2022 12:08:27 GMT
 recorded_with: VCR 6.0.0
