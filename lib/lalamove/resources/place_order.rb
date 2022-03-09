@@ -27,9 +27,9 @@ module Lalamove
         {
           quotationId: quotation.data.dig(:data, :quotationId),
           sender: {
-              stopId: delivery_stops_id.first,
-              name: stock_location[:name],
-              phone: stock_location[:phone]
+            stopId: delivery_stops_id.first,
+            name: stock_location[:name],
+            phone: stock_location[:phone]
           },
           recipients: deliveries,
           isPODEnabled: true,

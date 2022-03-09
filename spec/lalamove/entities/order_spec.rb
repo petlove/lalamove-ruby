@@ -5,21 +5,21 @@ require 'spec_helper'
 RSpec.describe Lalamove::Entities::Order do
   let(:attributes) do
     {
-        quotationId: "1501566646089744475",
-        sender: {
-          stopId: "1501566647029268487",
-          name: "São Paulo",
-          phone: "+551133350200"
-        },
-        recipients: [
-          {
-            stopId: "1501566647029268488",
-            name: "Anderson Ferreira",
-            phone: "+5511970009090"
-          }
-        ],
-        isRecipientSMSEnabled: false,
-        isPODEnabled: true
+      quotationId: '1501566646089744475',
+      sender: {
+        stopId: '1501566647029268487',
+        name: 'São Paulo',
+        phone: '+551133350200'
+      },
+      recipients: [
+        {
+          stopId: '1501566647029268488',
+          name: 'Anderson Ferreira',
+          phone: '+5511970009090'
+        }
+      ],
+      isRecipientSMSEnabled: false,
+      isPODEnabled: true
     }
   end
 

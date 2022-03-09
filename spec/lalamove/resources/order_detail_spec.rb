@@ -15,7 +15,7 @@ RSpec.describe Lalamove::Resources::OrderDetail do
       end
 
       it 'returns POD status with deliveredAt' do
-        expect(delivery_report.dig(:deliveredAt)).not_to be nil
+        expect(delivery_report[:deliveredAt]).not_to be nil
         expect(delivery_report[:status]).to eq('DELIVERED')
       end
     end

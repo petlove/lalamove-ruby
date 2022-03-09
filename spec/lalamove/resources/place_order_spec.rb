@@ -11,7 +11,6 @@ RSpec.describe Lalamove::Resources::PlaceOrder do
 
     context 'when success' do
       it 'returns a valid response' do
-
         is_expected.to be_valid
       end
 
@@ -20,7 +19,6 @@ RSpec.describe Lalamove::Resources::PlaceOrder do
         let(:orders) { [payload, payload] }
 
         it 'returns a valid response' do
-
           is_expected.to be_valid
         end
       end
