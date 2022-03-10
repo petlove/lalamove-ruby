@@ -40,7 +40,7 @@ module Lalamove
 
       def payload
         {
-          language: 'PT_BR',
+          language: Lalamove.configuration.country,
           serviceType: 'LALAGO',
           stops: delivery_stops,
           specialRequests: []

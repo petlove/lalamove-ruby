@@ -8,7 +8,7 @@ GIT
 PATH
   remote: .
   specs:
-    lalamove (0.1.2)
+    lalamove (0.2.0)
       activesupport (>= 5, < 7)
       awesome_print
       dry-struct (~> 1.4.0)
@@ -18,7 +18,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (6.1.4.1)
+    activesupport (6.1.4.7)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
@@ -61,11 +61,11 @@ GEM
       multipart-post (>= 1.2, < 3)
       ruby2_keywords
     hashdiff (1.0.1)
-    i18n (1.8.10)
+    i18n (1.10.0)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
     method_source (1.0.0)
-    minitest (5.14.4)
+    minitest (5.15.0)
     multipart-post (2.1.1)
     parallel (1.20.1)
     parser (3.0.1.1)
@@ -121,7 +121,7 @@ GEM
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
-    zeitwerk (2.4.2)
+    zeitwerk (2.5.4)
 
 PLATFORMS
   ruby
