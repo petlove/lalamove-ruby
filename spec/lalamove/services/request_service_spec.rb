@@ -8,7 +8,7 @@ RSpec.describe Lalamove::Services::RequestService do
   let(:payload)  { { foo: 'bar' } }
   let(:request)  { double(:request) }
   let(:path)     { '' }
-  let(:response) { double(body: "{\"data\":{}}", status: 201, success?: true, errors: {}) }
+  let(:response) { double(body: '{"data":{}}', status: 201, success?: true, errors: {}) }
 
   let(:headers) do
     {
@@ -33,7 +33,7 @@ RSpec.describe Lalamove::Services::RequestService do
           request: { open_timeout: 5, timeout: 10 }
         ).and_return(request)
 
-        expect(request).to receive(:send).once.with('post', path, {data: payload}.to_json).and_return(response)
+        expect(request).to receive(:send).once.with('post', path, { data: payload }.to_json).and_return(response)
         is_expected.to be_valid
       end
     end
@@ -60,7 +60,7 @@ RSpec.describe Lalamove::Services::RequestService do
           body: body,
           status: 422,
           success?: false,
-          reason_phrase: { data: {foo: 'bar'} },
+          reason_phrase: { data: { foo: 'bar' } },
           response_body: { bar: 'Baz' }.to_json
         )
       end
