@@ -6,7 +6,7 @@ module Lalamove
       private
 
       def process
-        result = RequestService.perform!(action: :post, payload: { data: payloadable.to_h }, path: '/v3/orders')
+        result = RequestService.perform!(action: :post, payload: payloadable.to_h, path: '/v3/orders')
         result.data[:amount] = result.data.dig(:data, :priceBreakdown, :total)
         result
       end

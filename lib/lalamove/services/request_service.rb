@@ -5,7 +5,7 @@ module Lalamove
     class RequestService < ActiveService::Base
       def initialize(params = {})
         @params  = params
-        @payload = params[:payload]&.to_json
+        @payload = {data: params[:payload]}&.to_json if params[:payload]
       end
 
       def perform
