@@ -41,7 +41,7 @@ It will generate an simple Lalamove cliente configuraion. Howevere if you prefer
       config.secret = 'Your own Lalamove secret key'
       config.currency = 'BRL'
       config.country = 'pt_BR'
-      config.city = 'BR_SAO'
+      config.market = 'BR'
     end
 ```
 
@@ -264,6 +264,14 @@ Lalamove::Client.order_cancel.perform!('123456789')
 
 ```ruby
 Lalamove::Client.order_detail.perform!('123456789')
+```
+
+##### Driver details
+
+```ruby
+order_id = '123'
+driver_id = '321'
+Lalamove::Client.driver_detail.perform!(order_id, driver_id)
 ```
 
 ## Development

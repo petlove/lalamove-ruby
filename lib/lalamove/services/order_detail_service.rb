@@ -12,7 +12,7 @@ module Lalamove
       def payloadable; end
 
       def path
-        "/v2/orders/#{params[:id]}"
+        "/v3/orders/#{params[:id]}"
       end
     end
   end

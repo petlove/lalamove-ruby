@@ -16,7 +16,7 @@ module Lalamove
       attr_reader :params
 
       def process
-        RequestService.perform!(action: :post, payload: payloadable.to_h, path: '/v2/quotations')
+        RequestService.perform!(action: :post, payload: payloadable.to_h, path: '/v3/quotations')
       end
 
       def payloadable

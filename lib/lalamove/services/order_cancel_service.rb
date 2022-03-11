@@ -6,13 +6,13 @@ module Lalamove
       private
 
       def process
-        RequestService.perform!(action: :put, payload: nil, path: path)
+        RequestService.perform!(action: :delete, payload: nil, path: path)
       end
 
       def payloadable; end
 
       def path
-        "/v2/orders/#{params[:id]}/cancel"
+        "/v3/orders/#{params[:id]}"
       end
     end
   end

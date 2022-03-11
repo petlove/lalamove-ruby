@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://rest.sandbox.lalamove.com/v2/orders/123456789
+    uri: https://rest.sandbox.lalamove.com/v3/orders/123456789
     body:
       encoding: US-ASCII
       string: ''
@@ -12,11 +12,11 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - hmac TOKEN:1623333057982:0595cc9fb402451fb41de73a337229fb666d2e38425c9dbfb9daa077851b813e
-      X-Llm-Country:
-      - BR_SAO
+      - hmac TOKEN:1646834254335:0ef1ec64f160a2b5503798862c6cb1a03b6e68e963b885cbda1072a0265c9e09
       X-Request-Id:
-      - '1623333057982'
+      - '1646834254335'
+      Market:
+      - BR
       User-Agent:
       - Faraday v1.1.0
       Accept-Encoding:
@@ -26,32 +26,42 @@ http_interactions:
       code: 404
       message: Not Found
     headers:
-      Server:
-      - nginx/1.15.8
       Date:
-      - Thu, 10 Jun 2021 13:51:00 GMT
+      - Wed, 09 Mar 2022 13:57:35 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '34'
+      - '71'
       Connection:
       - keep-alive
       Access-Control-Allow-Origin:
       - "*"
-      X-Llm-Session-Id:
-      - '1623333057982'
-      X-Ratelimit-Limit:
-      - '300'
-      X-Ratelimit-Remaining:
-      - '299'
-      X-Ratelimit-Reset:
-      - '1623333120'
-      Strict-Transport-Security:
-      - max-age=15724800; includeSubDomains
+      Api-Version:
+      - 3.0.0
+      Ratelimit-Limit:
+      - '50'
+      Ratelimit-Remaining:
+      - '49'
+      Ratelimit-Reset:
+      - '1646834256'
+      Request-Id:
+      - b9d31984-312e-4a07-8225-b7aee1b2e8c9
+      Vary:
+      - Origin
+      Access-Control-Expose-Headers:
+      - x-llm-location,cache-control,authorization,content-type
+      X-Kong-Upstream-Latency:
+      - '13'
+      X-Kong-Proxy-Latency:
+      - '0'
+      Via:
+      - kong/2.1.3
+      Server:
+      - WAF-Gateway/2.6
     body:
       encoding: UTF-8
-      string: '{"message":"ERR_ORDER_NOT_FOUND"}
+      string: '{"errors":[{"id":"ERR_ORDER_NOT_FOUND","message":"Order not found."}]}
 
         '
-  recorded_at: Thu, 10 Jun 2021 13:51:00 GMT
+  recorded_at: Wed, 09 Mar 2022 13:57:35 GMT
 recorded_with: VCR 6.0.0

@@ -21,50 +21,18 @@ module Lalamove
         Lalamove::Services::QuotationService.perform!(payload)
       end
 
-      def deliveries
-        orders.each_with_index.map do |order, pos|
-          shipping = order[:shipping_address]
-          {
-            toStop: pos + 1,
-            toContact: {
-              name: [shipping[:firstname], shipping[:lastname]].join(' '),
-              phone: "+55#{shipping[:phone]}"
-            },
-            remarks: "ORDER #{order[:number]}"
-          }
-        end
-      end
-
       def long_address(address)
         "#{address[:address1]}, #{address[:house_number]}, #{address[:address2]} "\
         "- #{address[:neighborhood]}, #{address[:city]} - #{address[:state]}, "\
         "#{address[:zipcode]}, Brazil"
       end
 
-      def addresses(address, country)
-        {
-          addresses: {
-            # location: {
-            #   lat: '-23.519658',
-            #   lng: '-46.679692'
-            # },
-            Lalamove.configuration.country => {
-              displayString: address,
-              country: country
-            }
-          }
-        }
-      end
-
       def delivery_stops
         stops = []
-        stops << addresses(stock_location[:address1], Lalamove.configuration.city)
+        stops << { address: stock_location[:address1] }
 
         orders.each do |order|
-          stops << addresses(
-            long_address(order[:shipping_address]),
-            Lalamove.configuration.city
-          )
+          stops << { address: long_address(order[:shipping_address]) }
         end
 
         stops
@@ -72,14 +40,9 @@ module Lalamove
 
       def payload
         {
-          # scheduleAt: (Time.now).utc.iso8601,
+          language: Lalamove.configuration.country,
           serviceType: 'LALAGO',
           stops: delivery_stops,
-          deliveries: deliveries,
-          requesterContact: {
-            name: stock_location[:name],
-            phone: stock_location[:phone]
-          },
           specialRequests: []
         }
       end

@@ -3,12 +3,12 @@
 module Lalamove
   class Client
     class << self
-      def quotation
-        Lalamove::Resources::Quotation
+      def driver_detail
+        Lalamove::Resources::DriverDetails
       end
 
-      def order_creator
-        Lalamove::Resources::OrderCreator
+      def quotation
+        Lalamove::Resources::Quotation
       end
 
       def place_order

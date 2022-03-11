@@ -11,7 +11,7 @@ RSpec.describe Lalamove::Services::OrderDetailService do
 
       it 'returns an object as expected with valid' do
         expect(Lalamove::Services::RequestService).to receive(:perform!).once.with(
-          action: :get, payload: anything, path: "/v2/orders/#{id}"
+          action: :get, payload: anything, path: "/v3/orders/#{id}"
         ).and_return(double(valid?: true))
 
         is_expected.to be_valid
@@ -23,7 +23,7 @@ RSpec.describe Lalamove::Services::OrderDetailService do
 
       it 'returns an object as expected with failure' do
         expect(Lalamove::Services::RequestService).to receive(:perform!).once.with(
-          action: :get, payload: anything, path: "/v2/orders/#{id}"
+          action: :get, payload: anything, path: "/v3/orders/#{id}"
         ).and_return(double(valid?: false))
 
         is_expected.not_to be_valid

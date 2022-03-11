@@ -1,57 +1,65 @@
 ---
 http_interactions:
 - request:
-    method: put
-    uri: https://rest.sandbox.lalamove.com/v2/orders/123456789/cancel
+    method: delete
+    uri: https://rest.sandbox.lalamove.com/v3/orders/123456789
     body:
-      encoding: UTF-8
-      string: "{}"
+      encoding: US-ASCII
+      string: ''
     headers:
       Content-Type:
       - application/json
       Accept:
       - application/json
       Authorization:
-      - hmac TOKEN:1622481025438:5765f6936ca07d1d70a58418e5910036fb8a096c980eed38a663651ab4e47d32
-      X-Llm-Country:
-      - BR_SAO
+      - hmac TOKEN:1646833701457:1a76b4830944a38e1637255696eb2a2c514308d65b50ecd86e0be381a3507200
       X-Request-Id:
-      - '1622481025438'
+      - '1646833701457'
+      Market:
+      - BR
       User-Agent:
       - Faraday v1.1.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
-      code: 409
-      message: Conflict
+      code: 404
+      message: Not Found
     headers:
-      Server:
-      - nginx/1.15.8
       Date:
-      - Mon, 31 May 2021 17:10:27 GMT
+      - Wed, 09 Mar 2022 13:48:22 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '41'
+      - '71'
       Connection:
       - keep-alive
       Access-Control-Allow-Origin:
       - "*"
-      X-Llm-Session-Id:
-      - '1622481025438'
-      X-Ratelimit-Limit:
-      - '300'
-      X-Ratelimit-Remaining:
-      - '299'
-      X-Ratelimit-Reset:
-      - '1622481085'
-      Strict-Transport-Security:
-      - max-age=15724800; includeSubDomains
+      Api-Version:
+      - 3.0.0
+      Ratelimit-Limit:
+      - '50'
+      Ratelimit-Remaining:
+      - '49'
+      Ratelimit-Reset:
+      - '1646833704'
+      Request-Id:
+      - 052ec4a7-8a19-4347-8fb0-99385a330711
+      Vary:
+      - Origin
+      Access-Control-Expose-Headers:
+      - x-llm-location,cache-control,authorization,content-type
+      X-Kong-Upstream-Latency:
+      - '11'
+      X-Kong-Proxy-Latency:
+      - '0'
+      Server:
+      - WAF-Gateway/2.6
     body:
       encoding: UTF-8
-      string: '{"message":"ERR_CANCELLATION_FORBIDDEN"}
+      string: '{"errors":[{"id":"ERR_ORDER_NOT_FOUND","message":"Order not found."}]}
 
         '
-  recorded_at: Mon, 31 May 2021 17:10:27 GMT
+  recorded_at: Wed, 09 Mar 2022 13:48:23 GMT
 recorded_with: VCR 6.0.0

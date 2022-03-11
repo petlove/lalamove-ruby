@@ -8,14 +8,14 @@ RSpec.describe Lalamove::Services::RequestService do
   let(:payload)  { { foo: 'bar' } }
   let(:request)  { double(:request) }
   let(:path)     { '' }
-  let(:response) { double(body: '{}', status: 201, success?: true, errors: {}) }
+  let(:response) { double(body: '{"data":{}}', status: 201, success?: true, errors: {}) }
 
   let(:headers) do
     {
       'Content-Type': 'application/json',
       Accept: 'application/json',
       Authorization: anything,
-      'X-LLM-Country': 'BR_SAO',
+      'MARKET': 'BR',
       'X-Request-ID': anything
     }
   end
@@ -33,8 +33,7 @@ RSpec.describe Lalamove::Services::RequestService do
           request: { open_timeout: 5, timeout: 10 }
         ).and_return(request)
 
-        expect(request).to receive(:send).once.with('post', path, payload.to_json).and_return(response)
-
+        expect(request).to receive(:send).once.with('post', path, { data: payload }.to_json).and_return(response)
         is_expected.to be_valid
       end
     end
@@ -53,7 +52,7 @@ RSpec.describe Lalamove::Services::RequestService do
     end
 
     context 'when status code different from 201' do
-      let(:body)    { '{"foo": "bar"}' }
+      let(:body)    { '{"data":{"foo": "bar"}}' }
       let(:request) { double(post: result) }
 
       let(:result) do
@@ -61,7 +60,7 @@ RSpec.describe Lalamove::Services::RequestService do
           body: body,
           status: 422,
           success?: false,
-          reason_phrase: { foo: 'bar' },
+          reason_phrase: { data: { foo: 'bar' } },
           response_body: { bar: 'Baz' }.to_json
         )
       end

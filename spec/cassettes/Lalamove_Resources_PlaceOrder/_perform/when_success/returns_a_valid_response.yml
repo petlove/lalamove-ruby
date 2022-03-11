@@ -2,60 +2,136 @@
 http_interactions:
 - request:
     method: post
-    uri: https://rest.sandbox.lalamove.com/v2/orders
+    uri: https://rest.sandbox.lalamove.com/v3/quotations
     body:
       encoding: UTF-8
-      string: '{"serviceType":"LALAGO","stops":[{"addresses":{"pt_BR":{"displayString":"Av.
-        Dr. Cardoso de Melo, 1155 - Vila Olimpia, São Paulo - SP, 04548-004, Brazil","country":"BR_SAO"}}},{"addresses":{"pt_BR":{"displayString":"Rua
-        Dom salomão ferraz, 1, 1 - Vila Andrade, São Paulo - SP, 05729140, Brazil","country":"BR_SAO"}}}],"deliveries":[{"toStop":1,"toContact":{"name":"Anderson
-        Ferreira","phone":"+5511970009090"},"remarks":"ORDER 123456789"}],"requesterContact":{"name":"São
-        Paulo","phone":"+551133350200"},"specialRequests":[],"quotedTotalFee":{"amount":"16.29","currency":"BRL"},"sms":false,"pod":true,"fleetOption":"FLEET_ALL"}'
+      string: '{"data":{"language":"PT_BR","serviceType":"LALAGO","stops":[{"address":"Av.
+        Dr. Cardoso de Melo, 1155 - Vila Olimpia, São Paulo - SP, 04548-004, Brazil"},{"address":"Rua
+        Dom salomão ferraz, 1, 1 - Vila Andrade, São Paulo - SP, 05729140, Brazil"}],"specialRequests":[]}}'
     headers:
       Content-Type:
       - application/json
       Accept:
       - application/json
       Authorization:
-      - hmac TOKEN:1622482140506:e1c5b62632cb9c4593201635ce9c3f483274815fdb61170e5a7488bec1843c11
-      X-Llm-Country:
-      - BR_SAO
+      - hmac TOKEN:1646836357690:18ac1c5b4b551dd62e126a2522c6b9e4da8b326e52d8b8248f67579ce3b2de2b
       X-Request-Id:
-      - '1622482140506'
+      - '1646836357690'
+      Market:
+      - BR
       User-Agent:
       - Faraday v1.1.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
-      code: 200
-      message: OK
+      code: 201
+      message: Created
     headers:
-      Server:
-      - nginx/1.15.8
       Date:
-      - Mon, 31 May 2021 17:29:07 GMT
+      - Wed, 09 Mar 2022 14:32:41 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '35'
+      - '733'
       Connection:
       - keep-alive
       Access-Control-Allow-Origin:
       - "*"
-      X-Llm-Session-Id:
-      - '1622482140506'
-      X-Ratelimit-Limit:
-      - '300'
-      X-Ratelimit-Remaining:
-      - '299'
-      X-Ratelimit-Reset:
-      - '1622482200'
-      Strict-Transport-Security:
-      - max-age=15724800; includeSubDomains
+      Api-Version:
+      - 3.0.0
+      Ratelimit-Limit:
+      - '50'
+      Ratelimit-Remaining:
+      - '49'
+      Ratelimit-Reset:
+      - '1646836361'
+      Request-Id:
+      - 6770f885-da03-42df-92e8-5d38a6b19a24
+      Vary:
+      - Origin
+      Access-Control-Expose-Headers:
+      - x-llm-location,cache-control,authorization,content-type
+      X-Kong-Upstream-Latency:
+      - '1083'
+      X-Kong-Proxy-Latency:
+      - '0'
+      Server:
+      - WAF-Gateway/2.6
     body:
       encoding: UTF-8
-      string: '{"orderRef":"1004199200419745792"}
+      string: '{"data":{"quotationId":"1501566646089744475","scheduleAt":"2022-03-09T14:32:40.00Z","expiresAt":"2022-03-09T14:37:41.00Z","serviceType":"LALAGO","language":"PT_BR","stops":[{"stopId":"1501566647029268487","coordinates":{"lat":"-23.5986957","lng":"-46.6850130"},"address":"Av.
+        Dr. Cardoso de Melo, 1155 - Vila Olimpia, São Paulo - SP, 04548-004, Brazil"},{"stopId":"1501566647029268488","coordinates":{"lat":"-23.6365087","lng":"-46.7389078"},"address":"Rua
+        Dom salomão ferraz, 1, 1 - Vila Andrade, São Paulo - SP, 05729140, Brazil"}],"isRouteOptimized":false,"priceBreakdown":{"base":"9.50","extraMileage":"6.78","vat":"1.63","totalBeforeOptimization":"17.91","totalExcludePriorityFee":"17.91","total":"17.91","currency":"BRL"}}}
 
         '
-  recorded_at: Mon, 31 May 2021 17:29:07 GMT
+  recorded_at: Wed, 09 Mar 2022 14:32:41 GMT
+- request:
+    method: post
+    uri: https://rest.sandbox.lalamove.com/v3/orders
+    body:
+      encoding: UTF-8
+      string: '{"data":{"quotationId":"1501566646089744475","sender":{"stopId":"1501566647029268487","name":"São
+        Paulo","phone":"+551133350200"},"recipients":[{"stopId":"1501566647029268488","name":"Anderson
+        Ferreira","phone":"+5511970009090"}],"isRecipientSMSEnabled":false,"isPODEnabled":true}}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      Authorization:
+      - hmac TOKEN:1646836361221:2da8b5de04906023290efd2dcf53bbbc864b95375da2b75d36d4e488d1639c34
+      X-Request-Id:
+      - '1646836361221'
+      Market:
+      - BR
+      User-Agent:
+      - Faraday v1.1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Wed, 09 Mar 2022 14:32:44 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '887'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Api-Version:
+      - 3.0.0
+      Ratelimit-Limit:
+      - '50'
+      Ratelimit-Remaining:
+      - '49'
+      Ratelimit-Reset:
+      - '1646836364'
+      Request-Id:
+      - e7753b98-3be6-4c0d-a19e-7223b9a3f7cd
+      Vary:
+      - Origin
+      Access-Control-Expose-Headers:
+      - x-llm-location,cache-control,authorization,content-type
+      X-Kong-Upstream-Latency:
+      - '687'
+      X-Kong-Proxy-Latency:
+      - '0'
+      Server:
+      - WAF-Gateway/2.6
+    body:
+      encoding: UTF-8
+      string: '{"data":{"orderId":"199170108290","quotationId":"1501566646089744475","priceBreakdown":{"base":"9.50","extraMileage":"6.78","vat":"1.63","totalExcludePriorityFee":"17.91","total":"17.91","currency":"BRL"},"driverId":"","shareLink":"https://share.sandbox.lalamove.com?BR100220309223243988210010078813349\u0026lang=pt_BR\u0026sign=7ec5819d5d043baa03d75f3e4bdea95f\u0026source=api_wrapper","status":"ASSIGNING_DRIVER","distance":{"value":"9822","unit":"m"},"stops":[{"coordinates":{"lat":"-23.5986957","lng":"-46.6850130"},"address":"Av.
+        Dr. Cardoso de Melo, 1155 - Vila Olimpia, São Paulo - SP, 04548-004, Brazil","name":"São
+        Paulo","phone":" 551133350200"},{"coordinates":{"lat":"-23.6365087","lng":"-46.7389078"},"address":"Rua
+        Dom salomão ferraz, 1, 1 - Vila Andrade, São Paulo - SP, 05729140, Brazil","name":"Anderson
+        Ferreira","phone":"11970009090","POD":{"status":"PENDING"}}]}}
+
+        '
+  recorded_at: Wed, 09 Mar 2022 14:32:44 GMT
 recorded_with: VCR 6.0.0
