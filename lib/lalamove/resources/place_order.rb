@@ -43,7 +43,7 @@ module Lalamove
           {
             stopId: delivery_stops_id[pos + 1],
             name: [shipping[:firstname], shipping[:lastname]].join(' '),
-            phone: "+55#{shipping[:phone]}",
+            phone: shipping[:phone],
             remarks: "ORDER #{order[:number]}"
           }
         end
