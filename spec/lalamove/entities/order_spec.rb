@@ -15,7 +15,8 @@ RSpec.describe Lalamove::Entities::Order do
         {
           stopId: '1501566647029268488',
           name: 'Anderson Ferreira',
-          phone: '+5511970009090'
+          phone: '+5511970009090',
+          remarks: 'ORDER 123'
         }
       ],
       isRecipientSMSEnabled: false,
