@@ -16,6 +16,15 @@ RSpec.describe Lalamove::Resources::Quotation do
       end
     end
 
+    context 'when success with car' do
+      let(:payload) { params_from_json('order_for_car') }
+      it 'returns a valid response' do
+        expect(Lalamove::Services::QuotationService).to receive(:perform!).once.and_call_original
+
+        is_expected.to be_valid
+      end
+    end
+
     context 'when failure' do
       let(:payload) { params_from_json('invalid_order') }
 

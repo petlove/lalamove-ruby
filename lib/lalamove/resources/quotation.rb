@@ -7,6 +7,7 @@ module Lalamove
         @params = params
         @stock_location = params[:stock_location]
         @orders = params[:orders].to_a
+        @service_type = params[:service_type] || 'LALAGO'
       end
 
       def perform
@@ -41,7 +42,7 @@ module Lalamove
       def payload
         {
           language: Lalamove.configuration.country,
-          serviceType: 'LALAGO',
+          serviceType: service_type,
           stops: delivery_stops,
           specialRequests: []
         }
