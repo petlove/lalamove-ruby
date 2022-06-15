@@ -5,7 +5,7 @@ http_interactions:
     uri: https://rest.sandbox.lalamove.com/v3/quotations
     body:
       encoding: UTF-8
-      string: '{"data":{"language":"PT_BR","serviceType":"LALAGO","stops":[{"address":"Av.
+      string: '{"data":{"language":"pt_BR","serviceType":"LALAGO","stops":[{"address":"Av.
         Dr. Cardoso de Melo, 1155 - Vila Olimpia, São Paulo - SP, 04548-004, Brazil"},{"address":"Rua
         Dom salomão ferraz, 1, 1 - Vila Andrade, São Paulo - SP, 05729140, Brazil"}],"specialRequests":[]}}'
     headers:
@@ -14,9 +14,9 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - hmac TOKEN:1646827703279:9c53c05ae52a01eb08c503a0e24bea1850f94d6a6c22a589633213784ef0ac99
+      - hmac TOKEN:1655319080109:7246eb555b030c105b98d71557c86f16ccb77bc643891c778f5b365b86df0522
       X-Request-Id:
-      - '1646827703279'
+      - '1655319080109'
       Market:
       - BR
       User-Agent:
@@ -29,43 +29,43 @@ http_interactions:
       message: Created
     headers:
       Date:
-      - Wed, 09 Mar 2022 12:08:25 GMT
+      - Wed, 15 Jun 2022 18:51:21 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
       - '733'
       Connection:
       - keep-alive
+      Waf-Ray-Id:
+      - d4e62e09de6a7d86fe0746fa54d22c52
       Access-Control-Allow-Origin:
       - "*"
       Api-Version:
       - 3.0.0
-      Ratelimit-Limit:
-      - '50'
-      Ratelimit-Remaining:
-      - '49'
-      Ratelimit-Reset:
-      - '1646827705'
+      Ratelimits-Limit-Postquotation:
+      - '30'
+      Ratelimits-Remaining-Postquotation:
+      - '28'
+      Ratelimits-Reset-Postquotation:
+      - '1655319083'
       Request-Id:
-      - f477a874-48e4-49c2-b476-ce999aa422a3
+      - faa2ba7b-be6b-40eb-9ab3-41cba2dd73ab
       Vary:
       - Origin
       Access-Control-Expose-Headers:
       - x-llm-location,cache-control,authorization,content-type
       X-Kong-Upstream-Latency:
-      - '1161'
+      - '296'
       X-Kong-Proxy-Latency:
       - '0'
-      Via:
-      - kong/2.1.3
       Server:
-      - WAF-Gateway/2.6
+      - WAF-Gateway/0.12
     body:
       encoding: UTF-8
-      string: '{"data":{"quotationId":"1501530342564102159","scheduleAt":"2022-03-09T12:08:24.00Z","expiresAt":"2022-03-09T12:13:25.00Z","serviceType":"LALAGO","language":"PT_BR","stops":[{"stopId":"1501530343621066796","coordinates":{"lat":"-23.5986957","lng":"-46.6850130"},"address":"Av.
-        Dr. Cardoso de Melo, 1155 - Vila Olimpia, São Paulo - SP, 04548-004, Brazil"},{"stopId":"1501530343621066797","coordinates":{"lat":"-23.6365087","lng":"-46.7389078"},"address":"Rua
-        Dom salomão ferraz, 1, 1 - Vila Andrade, São Paulo - SP, 05729140, Brazil"}],"isRouteOptimized":false,"priceBreakdown":{"base":"9.50","extraMileage":"6.78","vat":"1.63","totalBeforeOptimization":"17.91","totalExcludePriorityFee":"17.91","total":"17.91","currency":"BRL"}}}
+      string: '{"data":{"quotationId":"1537145754991403053","scheduleAt":"2022-06-15T18:51:21.00Z","expiresAt":"2022-06-15T18:56:21.00Z","serviceType":"LALAGO","language":"PT_BR","stops":[{"stopId":"1537145755364696142","coordinates":{"lat":"-23.5986957","lng":"-46.6850130"},"address":"Av.
+        Dr. Cardoso de Melo, 1155 - Vila Olimpia, São Paulo - SP, 04548-004, Brazil"},{"stopId":"1537145755364696143","coordinates":{"lat":"-23.6365087","lng":"-46.7389078"},"address":"Rua
+        Dom salomão ferraz, 1, 1 - Vila Andrade, São Paulo - SP, 05729140, Brazil"}],"isRouteOptimized":false,"priceBreakdown":{"base":"9.50","extraMileage":"6.78","vat":"3.26","totalBeforeOptimization":"19.54","totalExcludePriorityFee":"19.54","total":"19.54","currency":"BRL"}}}
 
         '
-  recorded_at: Wed, 09 Mar 2022 12:08:25 GMT
+  recorded_at: Wed, 15 Jun 2022 18:51:21 GMT
 recorded_with: VCR 6.0.0
