@@ -16,7 +16,7 @@ module Lalamove
 
       private
 
-      attr_reader :params, :stock_location, :orders
+      attr_reader :params, :stock_location, :orders, :service_type
 
       def process
         Lalamove::Services::QuotationService.perform!(payload)
