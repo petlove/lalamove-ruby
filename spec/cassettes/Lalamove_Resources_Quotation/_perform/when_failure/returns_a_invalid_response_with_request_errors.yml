@@ -5,7 +5,7 @@ http_interactions:
     uri: https://rest.sandbox.lalamove.com/v3/quotations
     body:
       encoding: UTF-8
-      string: '{"data":{"language":"PT_BR","serviceType":"LALAGO","stops":[{"address":""},{"address":",
+      string: '{"data":{"language":"pt_BR","serviceType":"LALAGO","stops":[{"address":""},{"address":",
         ,  - ,  - , , Brazil"}],"specialRequests":[]}}'
     headers:
       Content-Type:
@@ -13,9 +13,9 @@ http_interactions:
       Accept:
       - application/json
       Authorization:
-      - hmac TOKEN:1646827705886:a739f0baeb0aeeb29ab4672d6000fe40551f622c0d26db2798ffd0d9418ce683
+      - hmac TOKEN:1655319083455:496c64a1479a55fad379b6addc86092b7189baa2cb88bf8c0ec464070a8fd8bf
       X-Request-Id:
-      - '1646827705886'
+      - '1655319083455'
       Market:
       - BR
       User-Agent:
@@ -28,25 +28,27 @@ http_interactions:
       message: Unprocessable Entity
     headers:
       Date:
-      - Wed, 09 Mar 2022 12:08:27 GMT
+      - Wed, 15 Jun 2022 18:51:24 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
       - '44'
       Connection:
       - keep-alive
+      Waf-Ray-Id:
+      - 1699530d11fd50f56214205c434144aa
       Access-Control-Allow-Origin:
       - "*"
       Api-Version:
       - 3.0.0
-      Ratelimit-Limit:
-      - '50'
-      Ratelimit-Remaining:
-      - '49'
-      Ratelimit-Reset:
-      - '1646827708'
+      Ratelimits-Limit-Postquotation:
+      - '30'
+      Ratelimits-Remaining-Postquotation:
+      - '28'
+      Ratelimits-Reset-Postquotation:
+      - '1655319087'
       Request-Id:
-      - bb5be5fa-9777-42de-9023-3aca9796e634
+      - e7ba6aae-21b3-4362-b53f-9d657e928c4c
       Vary:
       - Origin
       Access-Control-Expose-Headers:
@@ -56,11 +58,11 @@ http_interactions:
       X-Kong-Proxy-Latency:
       - '0'
       Server:
-      - WAF-Gateway/2.6
+      - WAF-Gateway/0.12
     body:
       encoding: UTF-8
       string: '{"errors":[{"id":"ERR_INCORRECT_ADDRESS"}]}
 
         '
-  recorded_at: Wed, 09 Mar 2022 12:08:27 GMT
+  recorded_at: Wed, 15 Jun 2022 18:51:24 GMT
 recorded_with: VCR 6.0.0
