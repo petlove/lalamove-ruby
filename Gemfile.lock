@@ -8,7 +8,7 @@ GIT
 PATH
   remote: .
   specs:
-    lalamove (0.2.3)
+    lalamove (0.2.4)
       activesupport (>= 5, < 7)
       awesome_print
       dry-struct (~> 1.4.0)

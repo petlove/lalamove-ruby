@@ -7,8 +7,12 @@ module Lalamove
 
       def process
         result = RequestService.perform!(action: :post, payload: payloadable.to_h, path: '/v3/orders')
-        result.data[:data][:amount] = result.data.dig(:data, :priceBreakdown, :total)
+        set_amount(result)
         result
+      end
+
+      def set_amount(response)
+        response.data[:data][:amount] = response.data.dig(:data, :priceBreakdown, :total) if response.valid?
       end
 
       def payloadable
