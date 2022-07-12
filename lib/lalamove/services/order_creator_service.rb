@@ -12,9 +12,7 @@ module Lalamove
       end
 
       def set_amount(response)
-        if response.valid?
-          response.data[:data][:amount] = result.data.dig(:data, :priceBreakdown, :total)
-        end
+        response.data[:data][:amount] = result.data.dig(:data, :priceBreakdown, :total) if response.valid?
       end
 
       def payloadable
