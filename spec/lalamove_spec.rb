@@ -9,7 +9,7 @@ RSpec.describe Lalamove do
     end
 
     it 'returns the real version number' do
-      is_expected.to eql('0.2.4')
+      is_expected.to eql('0.2.5')
     end
   end
 
