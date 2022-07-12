@@ -60,8 +60,8 @@ RSpec.describe Lalamove::Services::RequestService do
           body: body,
           status: 422,
           success?: false,
-          reason_phrase: "Unprocessable Entity",
-          response_body: { errors: [{id: 'bar', message: 'Baz'}] }.to_json
+          reason_phrase: 'Unprocessable Entity',
+          response_body: { errors: [{ id: 'bar', message: 'Baz' }] }.to_json
         )
       end
 
@@ -74,7 +74,7 @@ RSpec.describe Lalamove::Services::RequestService do
       end
 
       it 'returns an array errors' do
-        expect(subject.errors).to eq(["Unprocessable Entity"])
+        expect(subject.errors).to eq(['Unprocessable Entity'])
       end
     end
   end
