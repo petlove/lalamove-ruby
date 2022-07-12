@@ -52,7 +52,7 @@ RSpec.describe Lalamove::Services::RequestService do
     end
 
     context 'when status code different from 201' do
-      let(:body)    { '{"data":{"foo": "bar"}}' }
+      let(:body)    { '{"errors": [{"id": "bar", "message": "Baz"}]}' }
       let(:request) { double(post: result) }
 
       let(:result) do
@@ -60,8 +60,8 @@ RSpec.describe Lalamove::Services::RequestService do
           body: body,
           status: 422,
           success?: false,
-          reason_phrase: { data: { foo: 'bar' } },
-          response_body: { bar: 'Baz' }.to_json
+          reason_phrase: 'Unprocessable Entity',
+          response_body: { errors: [{ id: 'bar', message: 'Baz' }] }.to_json
         )
       end
 
@@ -69,8 +69,12 @@ RSpec.describe Lalamove::Services::RequestService do
         allow_any_instance_of(described_class).to receive(:connection).and_return(request)
       end
 
-      it 'returns an error' do
-        expect(subject.errors).to eq([JSON.parse(result.body, symbolize_names: true)])
+      it 'returns an message error' do
+        expect(subject.message).to eq('Baz')
+      end
+
+      it 'returns an array errors' do
+        expect(subject.errors).to eq(['Unprocessable Entity'])
       end
     end
   end
