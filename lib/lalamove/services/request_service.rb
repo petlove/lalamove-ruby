@@ -63,7 +63,7 @@ module Lalamove
         response(
           errors: result.reason_phrase,
           status: result.status,
-          message: parser(result.body)[:message]
+          message: parser(result.body)[:errors].first[:message]
         )
       end
     end
