@@ -38,13 +38,12 @@ module Lalamove
       end
 
       def deliveries
-        orders.each_with_index.map do |order, pos|
-          shipping = order[:shipping_address]
+        recipients.each_with_index.map do |recipient, pos|
           {
             stopId: delivery_stops_id[pos + 1],
-            name: [shipping[:firstname], shipping[:lastname]].join(' '),
-            phone: shipping[:phone],
-            remarks: "ORDER #{order[:number]}"
+            name: recipient[:name],
+            phone: recipient[:phone],
+            remarks: "Booking Ref: #{recipient[:booking_id]}\r\nSender's Address Unit No: #{recipient[:sender_address_unit_no]}\r\nRecipient's Address Unit No: #{recipient[:recipient_address_unit_no]}"
           }
         end
       end

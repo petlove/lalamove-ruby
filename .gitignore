@@ -17,3 +17,5 @@ tags
 !.env.sample
 
 cc-test-reporter
+
+.idea
